@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Logo from "@/assets/images/logo.svg";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
@@ -33,13 +34,21 @@ export default function Header() {
       )}
     >
       <Inner className="flex items-center gap-10">
-        <Image src={Logo} alt="Logo" />
-        <Nav />
+        <Link href="/">
+          <Image src={Logo} alt="HRUS" />
+        </Link>
+        <div className="hidden lg:block">
+          <Nav />
+        </div>
         <div className="ml-auto flex h-[18px] items-center gap-1.5">
           <Button variant="ghost">로그인</Button>
           <Separator orientation="vertical" className="mr-2 ml-2" />
-          <Button variant="outline">도입문의</Button>
-          <Button>서비스 소개서</Button>
+          <Button variant="outline" asChild>
+            <Link href="/inquiry">도입문의</Link>
+          </Button>
+          <Button asChild>
+            <Link href="/solution">서비스 소개서</Link>
+          </Button>
         </div>
       </Inner>
     </header>
