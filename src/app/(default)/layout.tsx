@@ -8,7 +8,6 @@ export default function DefaultLayout({ children }: PropsWithChildren) {
     <>
       <Header />
       {children}
-      <div className="flex h-[40vh] items-center justify-center">샘플본문</div>
       <CTASection />
       <Footer />
     </>

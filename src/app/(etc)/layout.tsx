@@ -1,11 +1,12 @@
 import React, { PropsWithChildren } from "react";
+import Header from "@/components/layout/Header";
+import Inner from "@/components/layout/Inner";
 
 export default function EtcLayout({ children }: PropsWithChildren) {
   return (
-    <div>
-      기타 레이아웃
-      <br />
-      {children}
+    <div className="py-40">
+      <Header />
+      <Inner>{children}</Inner>
     </div>
   );
 }

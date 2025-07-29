@@ -1,16 +1,18 @@
 import Image from "next/image";
+import Link from "next/link";
 import AttendanceImage from "@/assets/images/icon-feature-attendance.svg";
 import EvalImage from "@/assets/images/icon-feature-eval.svg";
 import GoalsImage from "@/assets/images/icon-feature-goals.svg";
 import SalaryImage from "@/assets/images/icon-feature-salary.svg";
 import FeatureIcon from "../main/FeatureIcon";
 import {
-  CTAButton,
+  SectionCTA,
   SectionDescription,
   SectionHeader,
   SectionLogo,
   SectionTitle,
 } from "../main/Section";
+import { Button } from "../ui/button";
 import AnimatedCanvas from "./AnimatedCanvas";
 import Inner from "./Inner";
 
@@ -28,7 +30,11 @@ export default function CTASection() {
           <SectionDescription>
             지금 바로 HR US로 시작해 보세요
           </SectionDescription>
-          <CTAButton />
+          <SectionCTA>
+            <Button size="lg" asChild>
+              <Link href="/inquiry">도입문의</Link>
+            </Button>
+          </SectionCTA>
         </SectionHeader>
       </Inner>
       <div className="absolute inset-0 z-2 h-full w-full">
