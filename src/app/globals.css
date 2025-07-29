@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "tailwind-scrollbar-hide/v4";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -40,6 +41,9 @@
 
   --color-primary-gradient-from: #5766ff;
   --color-primary-gradient-to: #3748f5;
+  --color-primary: #5766ff;
+  --color-point: #00aeae;
+  --color-point-hover: #009d9d;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -55,7 +59,6 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: #5766ff;
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -123,4 +126,20 @@
   body {
     @apply bg-background text-foreground break-keep;
   }
+}
+
+body[data-scroll-lock] {
+  overflow: hidden !important;
+  overscroll-behavior: contain;
+  position: relative !important;
+  padding-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  margin-left: 0;
+  margin-top: 0;
+  margin-right: 15px !important;
+}
+
+[data-scroll-lock] .header {
+  margin-right: 15px;
 }

@@ -2,8 +2,13 @@
 
 import { useEffect, useRef } from "react";
 import { GridAnimation } from "@/lib/animation/GridAnimation";
+import { cn } from "@/lib/utils";
 
-export default function AnimatedCanvas() {
+type AnimatedCanvasProps = {
+  className?: string;
+};
+
+export default function AnimatedCanvas({ className }: AnimatedCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
   const engineRef = useRef<GridAnimation | null>(null);
@@ -43,7 +48,12 @@ export default function AnimatedCanvas() {
   }, []);
 
   return (
-    <div className="pointer-events-none h-[100vh] w-full overflow-hidden">
+    <div
+      className={cn(
+        "pointer-events-none h-[100vh] w-full overflow-hidden",
+        className,
+      )}
+    >
       <canvas
         ref={canvasRef}
         style={{

@@ -77,56 +77,56 @@ export class GridAnimation {
         x: 0,
         y: GRID_SIZE * 1,
         direction: "right",
-        speed: 0.3, // 6배 빠르게
+        speed: 0.3,
         colorIndex: 0,
       },
       {
         x: w,
         y: GRID_SIZE * 3,
         direction: "left",
-        speed: 0.35, // 약 6배 빠르게
+        speed: 0.35,
         colorIndex: 1,
       },
       {
         x: 0,
         y: GRID_SIZE * 5,
         direction: "right",
-        speed: 0.4, // 약 6배 빠르게
+        speed: 0.4,
         colorIndex: 2,
       },
       {
         x: w,
         y: GRID_SIZE * 7,
         direction: "left",
-        speed: 0.25, // 5배 빠르게
+        speed: 0.25,
         colorIndex: 0,
       },
       {
         x: GRID_SIZE * 2,
         y: 0,
         direction: "down",
-        speed: 0.45, // 약 6배 빠르게
+        speed: 0.45,
         colorIndex: 1,
       },
       {
         x: GRID_SIZE * 4,
         y: h,
         direction: "up",
-        speed: 0.35, // 약 6배 빠르게
+        speed: 0.35,
         colorIndex: 2,
       },
       {
         x: GRID_SIZE * 6,
         y: 0,
         direction: "down",
-        speed: 0.4, // 약 6배 빠르게
+        speed: 0.4,
         colorIndex: 0,
       },
       {
         x: GRID_SIZE * 8,
         y: h,
         direction: "up",
-        speed: 0.3, // 6배 빠르게
+        speed: 0.3,
         colorIndex: 1,
       },
     ];
