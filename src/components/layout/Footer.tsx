@@ -7,7 +7,7 @@ import Inner from "./Inner";
 
 export default function Footer() {
   return (
-    <div className="bg-gradient-to-b from-[#10122F] to-[#1D1D1D] py-20 text-white">
+    <div className="bg-gradient-to-b from-[#10122F] to-[#040615] py-20 text-white">
       <Inner className="mb-24 flex flex-col-reverse gap-16 md:flex-row md:justify-between">
         <Info />
       </Inner>

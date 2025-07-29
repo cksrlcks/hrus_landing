@@ -50,7 +50,7 @@ export default function AnimatedCanvas({ className }: AnimatedCanvasProps) {
   return (
     <div
       className={cn(
-        "pointer-events-none h-[100vh] w-full overflow-hidden",
+        "pointer-events-none h-full w-full overflow-hidden",
         className,
       )}
     >
@@ -58,8 +58,8 @@ export default function AnimatedCanvas({ className }: AnimatedCanvasProps) {
         ref={canvasRef}
         style={{
           display: "block",
-          width: "100vw",
-          height: "100vh",
+          width: "100%",
+          height: "100%",
           background: "#fff",
         }}
       />

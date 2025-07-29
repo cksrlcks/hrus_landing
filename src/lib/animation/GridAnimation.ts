@@ -1,5 +1,5 @@
 const ANIMATION_CONFIG = {
-  COLORS: ["#ff5c5c", "#5cffa9", "#5c9bff"] as const,
+  COLORS: ["#FC63A0", "#6A78FC", "#89EFFC"] as const,
   GRID_SIZE: 80,
   MIN_DISTANCE: 80 * 5,
   MAX_DISTANCE: 80 * 10,

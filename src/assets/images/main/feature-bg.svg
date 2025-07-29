@@ -1,0 +1,36 @@
+<svg width="680" height="640" viewBox="0 0 680 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.12">
+<g clip-path="url(#clip0_171_133)">
+<rect width="680" height="640" rx="16" fill="white"/>
+<g filter="url(#filter0_f_171_133)">
+<rect x="140.125" y="-283" width="461.823" height="670.249" rx="230.911" transform="rotate(30 140.125 -283)" fill="#00AEAE" fill-opacity="0.89" style="mix-blend-mode:multiply"/>
+</g>
+<g filter="url(#filter1_f_171_133)">
+<rect x="101.125" y="89" width="461.823" height="670.249" rx="230.911" transform="rotate(30 101.125 89)" fill="#69C9FF" fill-opacity="0.62" style="mix-blend-mode:multiply"/>
+</g>
+<g filter="url(#filter2_f_171_133)">
+<rect x="579.123" y="147.929" width="461.823" height="670.249" rx="230.911" transform="rotate(30 579.123 147.929)" fill="#0F24FF" fill-opacity="0.86" style="mix-blend-mode:multiply"/>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_f_171_133" x="-410.519" y="-498.519" width="1166.11" height="1242.4" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="150" result="effect1_foregroundBlur_171_133"/>
+</filter>
+<filter id="filter1_f_171_133" x="-449.519" y="-126.519" width="1166.11" height="1242.4" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="150" result="effect1_foregroundBlur_171_133"/>
+</filter>
+<filter id="filter2_f_171_133" x="28.4792" y="-67.59" width="1166.11" height="1242.4" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="150" result="effect1_foregroundBlur_171_133"/>
+</filter>
+<clipPath id="clip0_171_133">
+<rect width="680" height="640" rx="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>
