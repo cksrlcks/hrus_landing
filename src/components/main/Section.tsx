@@ -1,5 +1,6 @@
 import React, { PropsWithChildren } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { cva } from "class-variance-authority";
 import LogoImage from "@/assets/images/logo.svg";
 import { cn } from "@/lib/utils";
@@ -70,7 +71,9 @@ export const SectionDescription = ({
 export const CTAButton = () => {
   return (
     <div className="mt-10 flex items-center justify-center">
-      <Button size="lg">도입문의</Button>
+      <Button size="lg" asChild>
+        <Link href="/inquiry">도입문의</Link>
+      </Button>
     </div>
   );
 };

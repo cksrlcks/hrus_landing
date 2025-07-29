@@ -1,5 +1,6 @@
 import React from "react";
+import Hero from "@/components/service/Hero";
 
 export default function page() {
-  return <div>조직 페이지</div>;
+  return <Hero>조직 페이지</Hero>;
 }

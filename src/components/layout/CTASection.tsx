@@ -1,10 +1,8 @@
-import React, { PropsWithChildren } from "react";
 import Image from "next/image";
 import AttendanceImage from "@/assets/images/icon-feature-attendance.svg";
 import EvalImage from "@/assets/images/icon-feature-eval.svg";
 import GoalsImage from "@/assets/images/icon-feature-goals.svg";
 import SalaryImage from "@/assets/images/icon-feature-salary.svg";
-import { cn } from "@/lib/utils";
 import FeatureIcon from "../main/FeatureIcon";
 import {
   CTAButton,

@@ -1,5 +1,6 @@
 import React from "react";
+import Hero from "@/components/service/Hero";
 
 export default function page() {
-  return <div>전자결제&문서관리</div>;
+  return <Hero>전자결제&문서관리</Hero>;
 }
