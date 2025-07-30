@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+import { blurFocus, cn } from "@/lib/utils";
 import { NavigationMenuLink } from "../ui/navigation-menu";
 import { MenuItem, MenuItemStatus } from "./type";
 
@@ -36,7 +36,11 @@ export default function MenuChildItem({
       )}
     >
       <NavigationMenuLink asChild>
-        <Link href={child.path || "#"} className="block">
+        <Link
+          href={child.path || "#"}
+          className="block"
+          onClick={() => blurFocus()}
+        >
           <span className="flex items-center gap-2">
             {child.label}
             {child.status && (

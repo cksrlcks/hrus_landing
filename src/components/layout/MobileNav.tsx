@@ -57,7 +57,11 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
               <ul className="space-y-2 font-semibold">
                 {menu.children?.map((child) => (
                   <li key={child.id}>
-                    <Link href={child.path || "#"} className="hover:underline">
+                    <Link
+                      href={child.path || "#"}
+                      className="hover:underline"
+                      onClick={onClose}
+                    >
                       {child.label}
                     </Link>
                   </li>

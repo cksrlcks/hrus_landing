@@ -5,7 +5,7 @@ import SubNav from "@/components/service/Nav";
 export default function page() {
   return (
     <>
-      <Hero>전자결재&문서관리</Hero>
+      <Hero>결재 문서 페이지</Hero>
       <SubNav />
       <div className="flex h-[800px] items-center justify-center">본문내용</div>
     </>

@@ -60,9 +60,25 @@ export function AccordionTrigger({
   };
 
   return (
-    <button className={cn("w-full", className)} onClick={handleClick}>
+    <button className={cn("w-full text-left", className)} onClick={handleClick}>
       {children}
     </button>
+  );
+}
+
+type AccordionIconProps = PropsWithChildren<{ className?: string }>;
+export function AccordionIcon({ children, className }: AccordionIconProps) {
+  const { isOpen } = useAccordionContext();
+  return (
+    <span
+      className={cn(
+        "transition-transform",
+        isOpen ? "rotate-180" : "",
+        className,
+      )}
+    >
+      {children}
+    </span>
   );
 }
 

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { blurFocus } from "@/lib/utils";
 import {
   NavigationMenuContent,
   NavigationMenuItem,
@@ -24,7 +25,9 @@ export default function NavMenuItem({ menu }: NavMenuItemProps) {
         </>
       ) : (
         <NavigationMenuLink asChild>
-          <Link href={menu.path || "#"}>{menu.label}</Link>
+          <Link href={menu.path || "#"} onClick={() => blurFocus()}>
+            {menu.label}
+          </Link>
         </NavigationMenuLink>
       )}
     </NavigationMenuItem>
