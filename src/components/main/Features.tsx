@@ -82,7 +82,7 @@ const FEATURE_DATA: FeatureData[] = [
 ];
 export default function Features() {
   return (
-    <div className="flex items-center justify-center bg-[#f9f9f9] py-30">
+    <div className="flex items-center justify-center bg-[#f9f9f9] py-15 lg:py-30">
       <Inner>
         <SectionHeader className="mb-15">
           <SectionLogo />
@@ -92,21 +92,29 @@ export default function Features() {
           </SectionTitle>
           <SectionDescription className="mt-10">
             HR US는 업무일지, 캘린더, 상벌 관리, 승진 관리 등 기본적인 기능은
-            물론 <br />
+            물론 <br className="hidden lg:block" />
             인사 관리에 필요한 다양한 기능을 제공하여 효율적인 업무를 지원합니다
           </SectionDescription>
         </SectionHeader>
-        <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-2 lg:grid-cols-3 lg:gap-4">
           {FEATURE_DATA.map((feature) => (
             <div
               key={feature.title}
-              className="flex min-h-[300px] flex-col items-start rounded-2xl bg-white px-10 py-11 leading-normal tracking-tight"
+              className="flex flex-col items-start rounded-sm bg-white px-10 py-11 leading-normal tracking-tight lg:min-h-[300px] lg:rounded-2xl"
             >
-              <div className="mb-6 flex h-8 items-center">
-                <Image src={feature.icon} alt={feature.title} />
+              <div className="mb-6 flex h-6 items-center justify-start lg:h-8">
+                <Image
+                  src={feature.icon}
+                  alt={feature.title}
+                  className="h-full w-auto lg:h-auto"
+                />
               </div>
-              <h3 className="mb-4 text-xl font-semibold">{feature.title}</h3>
-              <div className="text-[#888]">{feature.description}</div>
+              <h3 className="mb-2 font-semibold lg:mb-4 lg:text-xl">
+                {feature.title}
+              </h3>
+              <div className="lg:text-default text-sm text-[#888] lg:w-[80%]">
+                {feature.description}
+              </div>
             </div>
           ))}
         </div>

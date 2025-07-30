@@ -135,9 +135,9 @@ const FEATURE_DATA: FeatureData[] = [
 
 export default function About() {
   return (
-    <div className="py-30">
+    <div className="py-15 lg:py-30">
       <Inner>
-        <SectionHeader className="mb-16 lg:items-start">
+        <SectionHeader className="mb-6 lg:mb-16 lg:items-start">
           <SectionLogo />
           <SectionTitle className="lg:text-left">
             인재와 기업의 성장을 위한 <br />
@@ -145,7 +145,7 @@ export default function About() {
           </SectionTitle>
         </SectionHeader>
 
-        <Tabs defaultValue={FEATURE_DATA[0].id}>
+        <Tabs defaultValue={FEATURE_DATA[0].id} orientation="vertical">
           <TabsList>
             {FEATURE_DATA.map((feature) => (
               <TabsTrigger key={feature.id} value={feature.id} asChild>
@@ -169,7 +169,11 @@ export default function About() {
                   <FeatureTitle>{feature.title}</FeatureTitle>
                   <FeatureDescription>{feature.description}</FeatureDescription>
                 </FeatureContent>
-                <Image src={feature.image} alt={feature.imageAlt} />
+                <Image
+                  src={feature.image}
+                  alt={feature.imageAlt}
+                  className="w-full"
+                />
               </TabsContent>
             ))}
           </FeatureCard>
