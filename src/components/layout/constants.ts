@@ -62,7 +62,7 @@ export const MENUS: Menu = [
       {
         id: "approval-document",
         label: "전자결재 & 문서관리",
-        path: "/service/approval-document",
+        path: "/service/docs",
         description:
           "결재 승인라인 설정, 문서 보관, 커스텀 양식 생성까지 기업 맞춤형 문서 완성",
         status: "upcoming",

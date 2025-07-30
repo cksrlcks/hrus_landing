@@ -30,16 +30,18 @@ const FAQ_DATA = [
 
 export default function Faq() {
   return (
-    <div className="pb-30">
+    <div className="pb-12 md:pb-30">
       <Inner>
-        <h3 className="mb-15 text-[28px] font-semibold">자주묻는 질문들</h3>
+        <h3 className="mb-8 text-xl font-semibold lg:mb-15 lg:text-[28px]">
+          자주묻는 질문들
+        </h3>
 
         <ul>
           {FAQ_DATA.map((item) => (
             <li key={item.id}>
               <Accordion>
                 <AccordionTrigger>
-                  <div className="flex cursor-pointer items-center justify-between border-b border-gray-100 py-9 text-lg font-semibold">
+                  <div className="flex cursor-pointer items-center justify-between border-b border-gray-100 py-6 font-semibold md:py-9 md:text-lg">
                     <span>{item.title}</span>
                     <AccordionIcon>
                       <ChevronDown />
@@ -47,7 +49,7 @@ export default function Faq() {
                   </div>
                 </AccordionTrigger>
                 <AccordionContent>
-                  <div className="bg-muted p-8 text-lg opacity-70">
+                  <div className="bg-muted p-8 opacity-70 md:text-lg">
                     {item.content}
                   </div>
                 </AccordionContent>

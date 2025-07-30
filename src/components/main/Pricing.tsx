@@ -42,7 +42,7 @@ export default function Pricing() {
             </SectionHeader>
             <PricingTable />
             {/* 안내사항 */}
-            <div className="text-white/50">
+            <div className="text-sm text-white/50 md:text-base">
               <Separator className="mt-12 mb-10 opacity-10" />
               <ul className="space-y-1">
                 <li>필수 옵션의 구성은 개별 선택할 수 없습니다.</li>

@@ -51,7 +51,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
           {MENUS.map((menu) => (
             <div
               key={menu.id}
-              className="md:text-default space-y-2 border-b pb-6 text-sm last:border-none"
+              className="md:text-default space-y-4 border-b pb-6 last:border-none"
             >
               <div className="opacity-50">{menu.label}</div>
               <ul className="space-y-2 font-semibold">
@@ -59,7 +59,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
                   <li key={child.id}>
                     <Link
                       href={child.path || "#"}
-                      className="hover:underline"
+                      className="text-lg hover:underline"
                       onClick={onClose}
                     >
                       {child.label}

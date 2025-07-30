@@ -1,8 +1,8 @@
 import Image from "next/image";
 import CoreWhiteImage from "@/assets/images/core-white.svg";
-import CheckIcon from "@/assets/images/icon-check.svg";
 import { cn } from "@/lib/utils";
 import { Accordion, AccordionContent, AccordionTrigger } from "../ui/Accordion";
+import CheckIcon from "../ui/CheckIcon";
 
 const PRICE_DATA = [
   {
@@ -69,7 +69,11 @@ export default function PricingTable() {
                   <div className="flex w-full items-center justify-between gap-2 rounded-md bg-[#1D1E2A] px-[30px] group-data-[opened=true]:bg-[#14172F]">
                     <div>
                       {item.id === "core" ? (
-                        <Image src={CoreWhiteImage} alt="HRUS CORE" />
+                        <Image
+                          src={CoreWhiteImage}
+                          alt="HRUS CORE"
+                          className="h-3 w-auto md:h-auto"
+                        />
                       ) : (
                         <span className="font-semibold text-white">
                           {item.label}
@@ -98,33 +102,30 @@ export default function PricingTable() {
               </AccordionTrigger>
               <AccordionContent>
                 <div className="mt-[6px] mb-4 rounded-lg bg-[#14172F] px-8 py-10">
-                  <table className="border-separate border-spacing-y-2">
-                    <tbody>
-                      {item.content.map((contentItem) => (
-                        <tr key={contentItem.label} className="align-top">
-                          <td className="w-[150px] text-base font-semibold text-white">
-                            <div className="flex items-center gap-3">
-                              <Image
-                                src={CheckIcon}
-                                alt="Check Icon"
-                                className="-mt-[1px]"
-                              />
-                              <span className="font-semibold">
-                                {contentItem.label}
-                              </span>
-                            </div>
-                          </td>
-                          <td>
-                            <ul className="flex flex-wrap gap-2 opacity-60">
-                              {contentItem.features.map((feature) => (
-                                <li key={feature}>{feature}</li>
-                              ))}
-                            </ul>
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                  <div className="flex flex-col gap-8 md:gap-2">
+                    {item.content.map((contentItem) => (
+                      <div
+                        key={contentItem.label}
+                        className="flex flex-col items-start gap-4 md:flex-row"
+                      >
+                        <div className="w-[150px] text-base font-semibold text-white">
+                          <div className="flex items-center gap-3">
+                            <CheckIcon className="-mt-[1px]" />
+                            <span className="font-semibold">
+                              {contentItem.label}
+                            </span>
+                          </div>
+                        </div>
+                        <div className="flex-1">
+                          <ul className="flex flex-wrap gap-2 opacity-60">
+                            {contentItem.features.map((feature) => (
+                              <li key={feature}>{feature}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </AccordionContent>
             </Accordion>

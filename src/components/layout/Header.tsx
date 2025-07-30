@@ -34,10 +34,11 @@ export default function Header() {
   return (
     <>
       <header
+        id="header"
         className={cn(
           "header",
-          "fixed top-0 right-0 left-0 z-200 flex items-center justify-between py-8 transition-[padding] md:py-[50px]",
-          isScrolled && "border-b border-gray-200 bg-white py-5 md:py-6",
+          "fixed top-0 right-0 left-0 z-200 flex h-[138px] items-center justify-between transition-[height]",
+          isScrolled && "h-[88px] border-b border-gray-200 bg-white",
         )}
       >
         <Inner className="flex items-center gap-4 lg:gap-10">

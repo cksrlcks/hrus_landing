@@ -101,7 +101,7 @@ export default function Features() {
           </SectionHeader>
         </FadeInUp>
         <FadeInUp>
-          <div className="grid grid-cols-2 gap-2 lg:grid-cols-3 lg:gap-4">
+          <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 lg:gap-4">
             {FEATURE_DATA.map((feature) => (
               <div
                 key={feature.title}

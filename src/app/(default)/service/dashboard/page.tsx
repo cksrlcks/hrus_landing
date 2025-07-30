@@ -1,13 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import FeatureIconDashboard from "@/assets/images/main/icon-feature-dashboard.svg";
+import FeatureIcon from "@/assets/images/main/icon-feature-dashboard.svg";
 import ServiceImage01 from "@/assets/images/service/dashboard/f-1.svg";
 import ServiceImage02 from "@/assets/images/service/dashboard/f-2.svg";
 import ServiceImage03 from "@/assets/images/service/dashboard/f-3.svg";
 import HeroImage01 from "@/assets/images/service/dashboard/hero-1.svg";
 import HeroImage02 from "@/assets/images/service/dashboard/hero-2.svg";
 import HeroImage03 from "@/assets/images/service/dashboard/hero-3.svg";
+import { ColorProvider } from "@/components/service/ColorProvider";
 import {
   Feature,
   FeatureImage,
@@ -18,6 +19,7 @@ import {
   FeatureSupport,
   SupportExcel,
   SupportPrint,
+  FeatureSectionWrapper,
 } from "@/components/service/Feature";
 import {
   ServiceFeatures,
@@ -30,16 +32,15 @@ import {
   ServiceTitle,
   ServiceTop,
 } from "@/components/service/Hero";
-import SubNav from "@/components/service/Nav";
 import { Button } from "@/components/ui/button";
 
 export default function page() {
   return (
-    <>
+    <ColorProvider color="green">
       <ServiceHero>
         <ServiceHeader>
           <ServiceTop>
-            <ServiceIcon src={FeatureIconDashboard} alt="대시보드" />
+            <ServiceIcon src={FeatureIcon} alt="대시보드" />
             <ServiceName>대시보드</ServiceName>
           </ServiceTop>
           <ServiceTitle>
@@ -60,21 +61,20 @@ export default function page() {
           </Button>
         </ServiceHeader>
         <ServicePreview>
-          <div className="translate-y-[22%] space-y-2.5">
+          <div className="-mb-[6%] space-y-2.5 lg:mb-0 lg:translate-y-[14%]">
             <ServicePreviewFrame>
               <Image src={HeroImage01} alt="총 인력 현황" />
             </ServicePreviewFrame>
             <ServicePreviewFrame>
               <Image src={HeroImage02} alt="구성원" />
             </ServicePreviewFrame>
-            <ServicePreviewFrame>
+            <ServicePreviewFrame className="hidden lg:block">
               <Image src={HeroImage03} alt="전직원 고용형태 구성 비율" />
             </ServicePreviewFrame>
           </div>
         </ServicePreview>
       </ServiceHero>
-      <SubNav />
-      <div className="py-20">
+      <FeatureSectionWrapper>
         <FeatureSection>
           <Feature>
             <FeatureContent>
@@ -150,7 +150,7 @@ export default function page() {
             <FeatureImage src={ServiceImage03} alt="구성원 일일보고서" />
           </Feature>
         </FeatureSection>
-      </div>
-    </>
+      </FeatureSectionWrapper>
+    </ColorProvider>
   );
 }
