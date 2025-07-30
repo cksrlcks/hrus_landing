@@ -1,6 +1,7 @@
 import React, { PropsWithChildren } from "react";
 import Image from "next/image";
 import { cva } from "class-variance-authority";
+import LogoWhiteImage from "@/assets/images/logo-white.svg";
 import LogoImage from "@/assets/images/logo.svg";
 import { cn } from "@/lib/utils";
 
@@ -13,8 +14,14 @@ export const SectionHeader = ({ children, className }: SectionProps) => {
   );
 };
 
-type SectionContentProps = PropsWithChildren<{ className?: string }>;
-export const SectionLogo = ({ className }: SectionContentProps) => {
+type SectionContentProps = PropsWithChildren<{
+  invert?: boolean;
+  className?: string;
+}>;
+export const SectionLogo = ({
+  invert = false,
+  className,
+}: SectionContentProps) => {
   return (
     <div
       className={cn(
@@ -22,7 +29,11 @@ export const SectionLogo = ({ className }: SectionContentProps) => {
         className,
       )}
     >
-      <Image src={LogoImage} alt="HRUS" className="h-4 w-auto" />
+      <Image
+        src={invert ? LogoWhiteImage : LogoImage}
+        alt="HRUS"
+        className="h-4 w-auto"
+      />
     </div>
   );
 };

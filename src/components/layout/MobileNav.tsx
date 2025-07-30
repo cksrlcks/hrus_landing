@@ -1,8 +1,6 @@
 import { useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { X } from "lucide-react";
-import LogoImage from "@/assets/images/logo.svg";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 import { MENUS } from "./constants";

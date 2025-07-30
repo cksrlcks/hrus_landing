@@ -13,51 +13,58 @@ export const MENUS: Menu = [
         id: "dashboard",
         label: "HR 대시보드",
         path: "/service/dashboard",
-        description: "HRUS의 모든 기능을 한눈에 확인할 수 있습니다.",
+        description:
+          "구성원 근무·휴무·계약 현황까지 실시간 인사 데이터를 한 눈에",
       },
       {
         id: "recruit",
         label: "인재채용",
         path: "/service/recruit",
-        description: "인재를 효율적으로 채용할 수 있는 솔루션입니다.",
+        description:
+          "채용공고 등록부터 합격자 연동까지 모든 채용 절차를 통합 관리",
       },
       {
         id: "organization",
         label: "조직",
         path: "/service/organization",
-        description: "조직도를 시각적으로 관리할 수 있습니다.",
+        description: "조직도, 구성원, 자산 정보까지 조직 변화에 따라 유연하게",
       },
       {
         id: "attendance",
         label: "근태",
         path: "/service/attendance",
-        description: "근태를 효율적으로 관리할 수 있는 솔루션입니다.",
+        description:
+          "초과근무·출장·유연근무·연차까지 구성원별 근무 기준과 현황을 명확하게",
       },
       {
         id: "goals",
         label: "목표",
         path: "/service/goals",
-        description: "조직과 개인의 목표를 관리할 수 있습니다.",
+        description:
+          "개인·부서·조직 목표 설정과 성과지표 및 평가자료 이력까지 체계적으로",
       },
       {
         id: "evaluation",
         label: "종합평가",
         path: "/service/evaluation",
-        description: "종합평가를 효율적으로 관리할 수 있는 솔루션입니다.",
+        status: "upcoming",
+        description:
+          "우리 회사 맞춤 자유로운 평가 설계로 다면·동료·개인평가를 맞춤형 구성",
       },
       {
         id: "salary-design",
         label: "임금설계",
         path: "/service/salary-design",
-        description: "임금설계를 효율적으로 관리할 수 있는 솔루션입니다.",
+        description:
+          "시뮬레이션 기반 연봉설계부터 계약서 자동 생성까지 한 번에 처리",
         status: "upcoming",
       },
       {
         id: "approval-document",
-        label: "전자결제&문서관리",
+        label: "전자결재 & 문서관리",
         path: "/service/approval-document",
         description:
-          "전자결제와 문서를 효율적으로 관리할 수 있는 솔루션입니다.",
+          "결재 승인라인 설정, 문서 보관, 커스텀 양식 생성까지 기업 맞춤형 문서 완성",
         status: "upcoming",
       },
     ],

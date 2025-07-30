@@ -5,6 +5,7 @@ import FeatureAttendance from "@/assets/images/main/feature-3.svg";
 import FeatureEvaluation from "@/assets/images/main/feature-4.svg";
 import FeatureSalary from "@/assets/images/main/feature-5.svg";
 import Inner from "../layout/Inner";
+import FadeInStagger from "../ui/FadeInUp";
 import {
   FeatureButton,
   FeatureButtonDescription,
@@ -137,47 +138,50 @@ export default function About() {
   return (
     <div className="py-15 lg:py-30">
       <Inner>
-        <SectionHeader className="mb-6 lg:mb-16 lg:items-start">
-          <SectionLogo />
-          <SectionTitle className="lg:text-left">
-            인재와 기업의 성장을 위한 <br />
-            <span className="text-primary">꼭 필요한 기능</span>만 담았습니다
-          </SectionTitle>
-        </SectionHeader>
+        <FadeInStagger>
+          <SectionHeader className="mb-6 lg:mb-16 lg:items-start">
+            <SectionLogo />
+            <SectionTitle className="lg:text-left">
+              인재와 기업의 성장을 위한 <br />
+              <span className="text-primary">꼭 필요한 기능</span>만 담았습니다
+            </SectionTitle>
+          </SectionHeader>
+          <Tabs defaultValue={FEATURE_DATA[0].id} orientation="vertical">
+            <TabsList>
+              {FEATURE_DATA.map((feature) => (
+                <TabsTrigger key={feature.id} value={feature.id} asChild>
+                  <FeatureButton>
+                    <FeatureButtonLabel>
+                      {feature.triggerLabel}
+                    </FeatureButtonLabel>
+                    <FeatureButtonDescription>
+                      {feature.trggerDescription}
+                    </FeatureButtonDescription>
+                  </FeatureButton>
+                </TabsTrigger>
+              ))}
+            </TabsList>
 
-        <Tabs defaultValue={FEATURE_DATA[0].id} orientation="vertical">
-          <TabsList>
-            {FEATURE_DATA.map((feature) => (
-              <TabsTrigger key={feature.id} value={feature.id} asChild>
-                <FeatureButton>
-                  <FeatureButtonLabel>
-                    {feature.triggerLabel}
-                  </FeatureButtonLabel>
-                  <FeatureButtonDescription>
-                    {feature.trggerDescription}
-                  </FeatureButtonDescription>
-                </FeatureButton>
-              </TabsTrigger>
-            ))}
-          </TabsList>
-
-          <FeatureCard>
-            {FEATURE_DATA.map((feature) => (
-              <TabsContent key={feature.id} value={feature.id}>
-                <FeatureContent>
-                  <FeatureCategory>{feature.category}</FeatureCategory>
-                  <FeatureTitle>{feature.title}</FeatureTitle>
-                  <FeatureDescription>{feature.description}</FeatureDescription>
-                </FeatureContent>
-                <Image
-                  src={feature.image}
-                  alt={feature.imageAlt}
-                  className="w-full"
-                />
-              </TabsContent>
-            ))}
-          </FeatureCard>
-        </Tabs>
+            <FeatureCard>
+              {FEATURE_DATA.map((feature) => (
+                <TabsContent key={feature.id} value={feature.id}>
+                  <FeatureContent>
+                    <FeatureCategory>{feature.category}</FeatureCategory>
+                    <FeatureTitle>{feature.title}</FeatureTitle>
+                    <FeatureDescription>
+                      {feature.description}
+                    </FeatureDescription>
+                  </FeatureContent>
+                  <Image
+                    src={feature.image}
+                    alt={feature.imageAlt}
+                    className="w-full"
+                  />
+                </TabsContent>
+              ))}
+            </FeatureCard>
+          </Tabs>
+        </FadeInStagger>
       </Inner>
     </div>
   );

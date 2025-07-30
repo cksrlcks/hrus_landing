@@ -9,6 +9,7 @@ import FeatureIconOrganization from "@/assets/images/main/icon-feature-organizat
 import FeatureIconRecruit from "@/assets/images/main/icon-feature-recruit.svg";
 import FeatureIconSalary from "@/assets/images/main/icon-feature-salary.svg";
 import Inner from "../layout/Inner";
+import FadeInUp from "../ui/FadeInUp";
 import {
   SectionDescription,
   SectionHeader,
@@ -68,7 +69,7 @@ const FEATURE_DATA: FeatureData[] = [
     status: "upcoming",
   },
   {
-    title: "전자결제",
+    title: "전자결재",
     description: "결재 On/Off 설정, 쉽고 빠른 결재자 승인, 반려처리",
     icon: FeatureIconCheck,
     status: "upcoming",
@@ -84,40 +85,45 @@ export default function Features() {
   return (
     <div className="flex items-center justify-center bg-[#f9f9f9] py-15 lg:py-30">
       <Inner>
-        <SectionHeader className="mb-15">
-          <SectionLogo />
-          <SectionTitle>
-            효율적인 인재 관리를 위한 <br />
-            똑똑한 기능
-          </SectionTitle>
-          <SectionDescription className="mt-10">
-            HR US는 업무일지, 캘린더, 상벌 관리, 승진 관리 등 기본적인 기능은
-            물론 <br className="hidden lg:block" />
-            인사 관리에 필요한 다양한 기능을 제공하여 효율적인 업무를 지원합니다
-          </SectionDescription>
-        </SectionHeader>
-        <div className="grid grid-cols-2 gap-2 lg:grid-cols-3 lg:gap-4">
-          {FEATURE_DATA.map((feature) => (
-            <div
-              key={feature.title}
-              className="flex flex-col items-start rounded-sm bg-white px-10 py-11 leading-normal tracking-tight lg:min-h-[300px] lg:rounded-2xl"
-            >
-              <div className="mb-6 flex h-6 items-center justify-start lg:h-8">
-                <Image
-                  src={feature.icon}
-                  alt={feature.title}
-                  className="h-full w-auto lg:h-auto"
-                />
+        <FadeInUp>
+          <SectionHeader className="mb-15">
+            <SectionLogo />
+            <SectionTitle>
+              효율적인 인재 관리를 위한 <br />
+              똑똑한 기능
+            </SectionTitle>
+            <SectionDescription className="mt-10">
+              HR US는 업무일지, 캘린더, 상벌 관리, 승진 관리 등 기본적인 기능은
+              물론 <br className="hidden lg:block" />
+              인사 관리에 필요한 다양한 기능을 제공하여 효율적인 업무를
+              지원합니다
+            </SectionDescription>
+          </SectionHeader>
+        </FadeInUp>
+        <FadeInUp>
+          <div className="grid grid-cols-2 gap-2 lg:grid-cols-3 lg:gap-4">
+            {FEATURE_DATA.map((feature) => (
+              <div
+                key={feature.title}
+                className="flex flex-col items-start rounded-sm bg-white px-10 py-11 leading-normal tracking-tight lg:min-h-[300px] lg:rounded-2xl"
+              >
+                <div className="mb-6 flex h-6 items-center justify-start lg:h-8">
+                  <Image
+                    src={feature.icon}
+                    alt={feature.title}
+                    className="h-full w-auto lg:h-auto"
+                  />
+                </div>
+                <h3 className="mb-2 font-semibold lg:mb-4 lg:text-xl">
+                  {feature.title}
+                </h3>
+                <div className="text-sm text-[#888] lg:w-[80%] lg:text-base">
+                  {feature.description}
+                </div>
               </div>
-              <h3 className="mb-2 font-semibold lg:mb-4 lg:text-xl">
-                {feature.title}
-              </h3>
-              <div className="lg:text-default text-sm text-[#888] lg:w-[80%]">
-                {feature.description}
-              </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </FadeInUp>
       </Inner>
     </div>
   );
