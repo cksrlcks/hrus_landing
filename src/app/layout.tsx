@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import InitScrollbarWidth from "@/components/layout/InitScrollbarWitdth";
+import QueryProvider from "@/components/provider/QueryProvider";
 import "./globals.css";
 
 const pretendard = localFont({
@@ -25,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={`${pretendard.className} antialiased`}>
-        {children}
+        <QueryProvider>{children}</QueryProvider>
         <InitScrollbarWidth />
       </body>
     </html>

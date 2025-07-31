@@ -1,10 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu } from "lucide-react";
+import { useMotionValueEvent, useScroll } from "motion/react";
 import Logo from "@/assets/images/logo.svg";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 import { Separator } from "../ui/separator";
@@ -13,23 +15,14 @@ import MobileNav from "./MobileNav";
 import Nav from "./Nav";
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const { scrollY } = useScroll();
+  const [scrolled, setScrolled] = useState(false);
+  const isDesktop = useMediaQuery("(min-width: 1024px)");
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY || window.pageYOffset;
-      setIsScrolled(scrollY > 0);
-    };
-
-    handleScroll();
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setScrolled(latest > 0);
+  });
 
   return (
     <>
@@ -37,8 +30,8 @@ export default function Header() {
         id="header"
         className={cn(
           "header",
-          "fixed top-0 right-0 left-0 z-200 flex h-[138px] items-center justify-between transition-[height]",
-          isScrolled && "h-[88px] border-b border-gray-200 bg-white",
+          "fixed top-0 right-0 left-0 z-200 flex h-[76px] items-center justify-between transition-[height] lg:h-[138px]",
+          scrolled && "h-[64px] border-b border-gray-200 bg-white lg:h-[84px]",
         )}
       >
         <Inner className="flex items-center gap-4 lg:gap-10">
@@ -77,7 +70,10 @@ export default function Header() {
         </Inner>
       </header>
 
-      <MobileNav isOpen={isOpen} onClose={() => setIsOpen(false)} />
+      <MobileNav
+        isOpen={isOpen && !isDesktop}
+        onClose={() => setIsOpen(false)}
+      />
     </>
   );
 }

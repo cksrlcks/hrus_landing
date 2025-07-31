@@ -1,9 +1,12 @@
 import React from "react";
+import Hero from "@/components/pricing/Hero";
+import Pricing from "@/components/pricing/Pricing";
 
-export default function page() {
+export default function PricePage() {
   return (
-    <div className="flex h-100 items-center justify-center">
-      구독요금 페이지
-    </div>
+    <>
+      <Hero />
+      <Pricing />
+    </>
   );
 }

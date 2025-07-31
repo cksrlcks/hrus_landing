@@ -10,3 +10,11 @@ export function blurFocus() {
     document.activeElement.blur();
   }
 }
+
+export function formatPrice(price: number | string): string {
+  if (isNaN(Number(price))) {
+    return "-";
+  }
+
+  return Number(price).toLocaleString();
+}

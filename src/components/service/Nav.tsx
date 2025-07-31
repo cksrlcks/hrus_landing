@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -140,7 +140,7 @@ export default function SubNav() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className={cn(
-              "fixed top-[88px] right-0 left-0 z-100 hidden border-b border-gray-200 bg-white shadow-[0_4px_46px_rgba(0,0,0,0.03)] lg:flex",
+              "fixed top-[84px] right-0 left-0 z-100 hidden border-b border-gray-200 bg-white shadow-[0_4px_46px_rgba(0,0,0,0.03)] lg:flex",
             )}
           >
             <Inner>

@@ -55,7 +55,7 @@ export const SectionTitle = ({
           default:
             "text-[24px]/[32px] md:text-[32px]/[40px] lg:text-[40px]/[51px]",
           md: "text-[26px]/[36px] md:text-[36px]/[48px] lg:text-[48px]/[60px]",
-          lg: "text-[28px]/[40px] md:text-[40px]/[56px] lg:text-[56px]/[65px]",
+          lg: "text-[28px]/[40px] tracking-tight md:text-[40px]/[56px] lg:text-[56px]/[65px]",
         },
       },
     },
