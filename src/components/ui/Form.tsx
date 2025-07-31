@@ -14,8 +14,6 @@ import {
 } from "react-hook-form";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
-import Badge from "./Badge";
-import { Separator } from "./separator";
 
 const Form = FormProvider;
 

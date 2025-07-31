@@ -36,6 +36,8 @@ export function FormTitle({ children }: PropsWithChildren) {
 
 export function FormDescription({ children }: PropsWithChildren) {
   return (
-    <SectionDescription className="md:text-lg">{children}</SectionDescription>
+    <SectionDescription className="text-left md:text-lg lg:w-[70%]">
+      {children}
+    </SectionDescription>
   );
 }

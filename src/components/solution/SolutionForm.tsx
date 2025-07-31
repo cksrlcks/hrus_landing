@@ -4,7 +4,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import z from "zod";
-import Dropzone from "@/components/ui/Dropzone";
 import {
   Form,
   FormContent,
@@ -20,44 +19,42 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import Badge from "../ui/Badge";
 import { Button } from "../ui/button";
 import { Separator } from "../ui/separator";
 
 const schema = z.object({
-  name: z.string().min(1, { message: "이름을 입력해주세요." }),
+  company: z.string().min(1, { message: "회사명을 입력해주세요." }),
+  personCount: z.string().min(1, { message: "인원수를 입력해주세요." }),
+  name: z.string().min(1, { message: "담당자명을 입력해주세요." }),
+  part: z.string().min(1, { message: "부서를 입력해주세요." }),
+  position: z.string().min(1, { message: "직책을 입력해주세요." }),
   email: z.email({ message: "유효한 이메일을 입력해주세요." }),
-  type: z.string().min(1, { message: "문의 유형을 선택해주세요." }),
-  title: z.string().min(1, { message: "제목을 입력해주세요." }),
-  content: z.string().min(1, { message: "내용을 입력해주세요." }),
-  files: z
-    .array(
-      z.file().max(5 * 1024 * 1024, { message: "5MB를 초과 할 수 없습니다." }),
-    )
-    .optional(),
+  phone: z
+    .string()
+    .min(1, { message: "휴대전화번호를 입력해주세요." })
+    .regex(/^\d{3}-\d{4}-\d{4}$/, {
+      message: "전화번호는 010-0000-0000 형식이어야 합니다.",
+    }),
+  content: z.string().min(1, { message: "문의사항을 적어주세요." }),
 });
 
 type SchemaType = z.infer<typeof schema>;
 
-export default function InquiryForm() {
+export default function SolutionForm() {
   const form = useForm<SchemaType>({
     resolver: zodResolver(schema),
     mode: "onSubmit",
     defaultValues: {
+      company: "",
+      personCount: "",
       name: "",
+      part: "",
+      position: "",
       email: "",
-      type: "0010",
-      title: "",
+      phone: "",
       content: "",
-      files: [],
     },
   });
   console.log(form.formState.errors);
@@ -65,7 +62,7 @@ export default function InquiryForm() {
 
   const handleSubmit = form.handleSubmit((data) => {
     console.log("Form Data:", data);
-    alert("문의가 접수되었습니다. 감사합니다!");
+    alert("최대한 빠른 시일 내에 답변드리겠습니다.");
   });
 
   return (
@@ -79,12 +76,69 @@ export default function InquiryForm() {
             <FormRow>
               <FormField
                 control={form.control}
+                name="company"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>회사명</FormLabel>
+                    <FormControl>
+                      <Input placeholder="회사명을 입력해주세요" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="personCount"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>직원 수</FormLabel>
+                    <FormControl>
+                      <Input placeholder="직원 수를 입력해주세요" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </FormRow>
+            <FormRow>
+              <FormField
+                control={form.control}
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>성명</FormLabel>
+                    <FormLabel>담당자명</FormLabel>
                     <FormControl>
-                      <Input placeholder="성명을 입력해주세요" {...field} />
+                      <Input placeholder="담당자명을 입력해주세요" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="part"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>부서</FormLabel>
+                    <FormControl>
+                      <Input placeholder="부서를 입력해주세요" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </FormRow>
+            <FormRow>
+              <FormField
+                control={form.control}
+                name="position"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>직책</FormLabel>
+                    <FormControl>
+                      <Input placeholder="직책을 입력해주세요" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -96,11 +150,11 @@ export default function InquiryForm() {
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>이메일</FormLabel>
+                    <FormLabel>회사 이메일</FormLabel>
                     <FormControl>
                       <Input
-                        placeholder="이메일을 입력해주세요"
                         type="email"
+                        placeholder="회사 이메일을 입력해주세요"
                         {...field}
                       />
                     </FormControl>
@@ -109,35 +163,31 @@ export default function InquiryForm() {
                 )}
               />
             </FormRow>
-          </FormContent>
-        </FormSection>
-        <FormSection>
-          <FormSectionTitle>
-            문의 내용 <Badge>필수</Badge>
-          </FormSectionTitle>
-          <FormContent>
             <FormRow>
               <FormField
                 control={form.control}
-                name="type"
+                name="phone"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>문의 유형</FormLabel>
+                    <FormLabel>휴대전화번호</FormLabel>
                     <FormControl>
-                      <Select
+                      <Input
+                        placeholder="휴대전화번호를 입력해주세요"
+                        {...field}
                         value={field.value}
-                        onValueChange={field.onChange}
-                      >
-                        <SelectTrigger className="w-full">
-                          <SelectValue placeholder="문의유형을 선택하세요" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="0010">이용문의</SelectItem>
-                          <SelectItem value="0020">구독문의</SelectItem>
-                          <SelectItem value="0030">결제/환불 문의</SelectItem>
-                          <SelectItem value="0040">기타</SelectItem>
-                        </SelectContent>
-                      </Select>
+                        onBlur={field.onBlur}
+                        onChange={(e) => {
+                          const raw = e.target.value
+                            .replace(/\D/g, "")
+                            .slice(0, 11);
+                          const formatted = raw.replace(
+                            /(\d{3})(\d{4})(\d{0,4})/,
+                            (_, a, b, c) =>
+                              c ? `${a}-${b}-${c}` : `${a}-${b}`,
+                          );
+                          field.onChange(formatted);
+                        }}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -145,50 +195,22 @@ export default function InquiryForm() {
               />
               <div className="hidden lg:block" />
             </FormRow>
-            <FormRow>
-              <FormField
-                control={form.control}
-                name="title"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>제목</FormLabel>
-                    <FormControl>
-                      <Input placeholder="제목을 입력해주세요" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </FormRow>
+          </FormContent>
+        </FormSection>
+        <FormSection>
+          <FormSectionTitle>궁금하신 점을 추가로 남겨주세요</FormSectionTitle>
+          <FormContent>
             <FormRow>
               <FormField
                 control={form.control}
                 name="content"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>문의내용</FormLabel>
                     <FormControl>
                       <Textarea
-                        placeholder="문의내용을 입력해주세요"
+                        placeholder="궁금하신 점을 입력해주세요"
                         {...field}
                       />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </FormRow>
-            <FormRow>
-              <FormField
-                control={form.control}
-                name="files"
-                render={({ field: { onChange, value } }) => (
-                  <FormItem>
-                    <FormLabel>
-                      첨부파일 <Badge variant="secondary">선택</Badge>
-                    </FormLabel>
-                    <FormControl>
-                      <Dropzone onChange={onChange} value={value} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -214,7 +236,11 @@ export default function InquiryForm() {
                 <em className="text-[#888] not-italic">
                   (담당자명, 이메일, 전화번호)
                 </em>
-                및 이용 동의 약관에 동의합니다.
+                및 활용{" "}
+                <em className="text-[#888] not-italic">
+                  (소개서 제공 및 상담)
+                </em>
+                에 동의합니다.
               </span>
             </Label>
           </div>
