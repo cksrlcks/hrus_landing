@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   AnimatePresence,
   useMotionValueEvent,
@@ -54,9 +55,12 @@ export default function FloatingCTA() {
             지금 바로 시작하세요!
           </span>
 
-          <button className="ml-4 flex h-full cursor-pointer items-center justify-center rounded-full bg-[#0F1335] px-4 py-2 font-semibold text-white shadow-sm">
+          <Link
+            href="/pricing"
+            className="ml-4 flex h-full cursor-pointer items-center justify-center rounded-full bg-[#0F1335] px-4 py-2 font-semibold text-white shadow-sm"
+          >
             시작하기
-          </button>
+          </Link>
         </motion.div>
       )}
     </AnimatePresence>
