@@ -11,6 +11,7 @@ import {
   SectionHeader,
   SectionTitle,
 } from "../main/Section";
+import GradientText from "../ui/GradientText";
 
 export default function Hero() {
   return (
@@ -22,9 +23,7 @@ export default function Hero() {
           <SectionTitle size="lg">
             원하는 기능만 골라서
             <br />
-            <span className="bg-gradient-to-r from-[#5766FF] to-[#AC7CFF] bg-clip-text text-transparent">
-              시작해 보세요
-            </span>
+            <GradientText>시작해 보세요</GradientText>
           </SectionTitle>
           <SectionDescription>
             월 최소 <b className="font-semibold text-black">30,000원</b>으로

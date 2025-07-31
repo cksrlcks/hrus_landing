@@ -1,6 +1,6 @@
 "use client";
 
-import { ButtonHTMLAttributes, FocusEvent, useRef, useState } from "react";
+import { ButtonHTMLAttributes, useRef, useState } from "react";
 import { Minus, Plus } from "lucide-react";
 import { cn } from "@/lib/utils";
 

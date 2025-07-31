@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Inner from "../layout/Inner";
 import FadeInStagger from "../ui/FadeInUp";
+import GridentText from "../ui/GradientText";
 import { Button } from "../ui/button";
 import { Separator } from "../ui/separator";
 import PricingTable from "./PricingTable";
@@ -23,9 +24,7 @@ export default function Pricing() {
               <SectionLogo invert />
               <SectionTitle>
                 원하는 기능만 골라서 <br />
-                <span className="bg-gradient-to-r from-[#5766FF] to-[#AC7CFF] bg-clip-text text-transparent">
-                  시작해 보세요
-                </span>
+                <GridentText>시작해 보세요</GridentText>
               </SectionTitle>
               <SectionDescription className="text-white/60">
                 월 최소 <b className="font-semibold text-white">30,000원</b>으로
