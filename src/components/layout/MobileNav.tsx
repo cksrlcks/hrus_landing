@@ -16,12 +16,12 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
   useEffect(() => {
     if (!isOpen) return;
 
-    document.body.setAttribute("data-scroll-lock", "true");
+    document.body.setAttribute("data-scroll-locked", "true");
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
     return () => {
-      document.body.removeAttribute("data-scroll-lock");
+      document.body.removeAttribute("data-scroll-locked");
       document.body.style.overflow = prevOverflow;
     };
   }, [isOpen]);

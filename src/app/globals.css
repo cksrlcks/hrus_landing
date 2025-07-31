@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "tailwind-scrollbar-hide/v4";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -154,7 +155,7 @@
   }
 }
 
-body[data-scroll-lock] {
+body[data-scroll-locked] {
   overflow: hidden !important;
   overscroll-behavior: contain;
   position: relative !important;
@@ -166,6 +167,6 @@ body[data-scroll-lock] {
   margin-right: var(--scrollbar-width) !important;
 }
 
-[data-scroll-lock] .header {
+[data-scroll-locked] .header {
   margin-right: var(--scrollbar-width);
 }

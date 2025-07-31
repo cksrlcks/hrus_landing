@@ -42,8 +42,14 @@ export default function Header() {
             <Nav />
           </div>
           <div className="ml-auto flex h-[18px] origin-right scale-80 items-center gap-1.5 md:scale-none">
-            <Button variant="ghost" className="hidden lg:flex">
-              로그인
+            <Button variant="ghost" className="hidden lg:flex" asChild>
+              <a
+                href="https://hrus.uxis.co.kr/login"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                로그인
+              </a>
             </Button>
             <Separator
               orientation="vertical"

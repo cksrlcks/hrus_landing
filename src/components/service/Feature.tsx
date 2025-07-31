@@ -142,5 +142,5 @@ export function FeatureSection({ children }: PropsWithChildren) {
 }
 
 export function FeatureSectionWrapper({ children }: PropsWithChildren) {
-  return <div className="py-6 lg:py-20">{children}</div>;
+  return <div className="py-6 lg:mt-12 lg:py-20">{children}</div>;
 }

@@ -4,10 +4,10 @@ import SubNav from "@/components/service/Nav";
 
 export default function ServiceLayout({ children }: { children: ReactNode }) {
   return (
-    <div>
+    <>
       <SubNav />
       {children}
       <Faq />
-    </div>
+    </>
   );
 }

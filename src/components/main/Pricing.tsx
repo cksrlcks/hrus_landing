@@ -35,7 +35,7 @@ export default function Pricing() {
               </SectionDescription>
               <SectionCTA>
                 <Button size="lg" asChild>
-                  <Link href="/inquiry">도입문의</Link>
+                  <Link href="/pricing">구독요금 안내</Link>
                 </Button>
               </SectionCTA>
             </SectionHeader>

@@ -1,5 +1,9 @@
 import React from "react";
+import Post from "@/components/terms/Post";
+import { getMdxFiles, termsDirectory } from "@/lib/mdx";
 
 export default function page() {
-  return <div>이용약관 페이지</div>;
+  const posts = getMdxFiles(termsDirectory);
+
+  return <Post post={posts[0]} />;
 }

@@ -100,7 +100,7 @@ export default function Summary({ onSubmit }: SummaryProps) {
                   className="flex items-center justify-between gap-2.5"
                 >
                   <div className="flex items-center gap-3 font-semibold">
-                    <Image src={PlusIcon} alt="plus" />
+                    <Image src={PlusIcon} alt="plus" className="h-auto w-4" />
                     {addon.title}
                   </div>
                   <AddonBadge mini />
@@ -113,7 +113,7 @@ export default function Summary({ onSubmit }: SummaryProps) {
         <Separator className="my-4" />
 
         {/* 가격 정리 */}
-        <ul className="mb-6">
+        <ul className="mb-6 space-y-1">
           <li className="flex items-center justify-between gap-2.5">
             <span className="font-sm text-gray-500">기본 옵션</span>
             <span className="font-semibold tracking-tighter">
@@ -124,8 +124,8 @@ export default function Summary({ onSubmit }: SummaryProps) {
             <li className="flex items-center justify-between gap-2.5">
               <span className="font-sm text-gray-500">부가 옵션</span>
               <span className="flex items-center gap-2 font-semibold tracking-tighter">
-                <Image src={PlusIcon} alt="plus" /> {formatPrice(addonsPrice)}{" "}
-                원
+                <Image src={PlusIcon} alt="plus" className="h-auto w-4" />{" "}
+                {formatPrice(addonsPrice)} 원
               </span>
             </li>
           )}
