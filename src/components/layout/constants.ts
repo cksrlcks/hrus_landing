@@ -136,14 +136,6 @@ export const COMPANY_INFO = {
       label: "대표번호/팩스",
       value: "1544-8156 / 1544-8156 (FAX)",
     },
-    {
-      label: "사업자등록번호",
-      value: "617-81-60090",
-    },
-    {
-      label: "이메일",
-      value: "uxis@uxis.co.kr",
-    },
   ],
 };
 

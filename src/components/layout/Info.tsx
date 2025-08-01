@@ -10,7 +10,9 @@ export default function Info() {
       <div className="space-y-10">
         <div className="space-y-4">
           <Image src={LogoImage} alt="HRUS" />
-          <span className="font-medium">기업맞춤형 인사경영혁신 솔루션</span>
+          <span className="font-medium">
+            중소기업 맞춤형 인사경영혁신 솔루션
+          </span>
         </div>
         <div className="space-y-2.5 text-sm">
           <div className="font-semibold">{COMPANY_INFO.company_name}</div>

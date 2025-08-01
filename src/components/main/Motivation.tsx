@@ -12,7 +12,7 @@ export default function Motivation() {
         <Inner className="relative">
           <SectionHeader className="lg:items-start lg:text-left">
             <span className="text-point mb-6 font-semibold md:text-lg lg:text-[20px]">
-              중소벤처기업의 HR관리를 한눈에, 한번에
+              중소기업의 HR관리를 한눈에, 한번에
             </span>
             <SectionTitle className="lg:text-left">
               쏟아지는 핵심 업무로 <br />

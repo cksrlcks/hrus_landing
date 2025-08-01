@@ -71,7 +71,8 @@ export default function Hero() {
       </div>
 
       <AnimatedCanvas className="absolute inset-0" />
-      <div className="absolute right-0 bottom-0 left-0 h-[50%] w-full translate-y-1/2 bg-[#57EEFF] opacity-[0.08] mix-blend-multiply blur-[100px]"></div>
+      <div className="absolute right-0 bottom-0 left-0 h-full w-full translate-y-[35%] bg-[#5766FF] opacity-[0.03] mix-blend-multiply blur-[200px]"></div>
+      <div className="absolute right-0 bottom-0 left-0 h-full w-full translate-y-[55%] bg-[#57EEFF] opacity-[0.1] mix-blend-multiply blur-[200px]"></div>
       <div className="absolute right-0 bottom-0 left-0 h-50 w-full bg-gradient-to-t from-[#FFFFFF] to-[#FFFFFF]/0"></div>
     </div>
   );

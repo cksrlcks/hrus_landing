@@ -1,7 +1,12 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import FeatureIcon from "@/assets/images/main/icon-feature-organization.svg";
-import ServiceSampleImage from "@/assets/images/service/feature-sample.svg";
+import ServiceImage01 from "@/assets/images/service/organization/f-1.svg";
+import ServiceImage02 from "@/assets/images/service/organization/f-2.svg";
+import ServiceImage03 from "@/assets/images/service/organization/f-3.svg";
+import ServiceImage04 from "@/assets/images/service/organization/f-4.svg";
+import HeroImage from "@/assets/images/service/organization/hero.svg";
 import { ColorProvider } from "@/components/service/ColorProvider";
 import {
   Feature,
@@ -51,7 +56,9 @@ export default function page() {
             <Link href="/inquiry">도입문의</Link>
           </Button>
         </ServiceHeader>
-        <ServicePreview></ServicePreview>
+        <ServicePreview>
+          <Image src={HeroImage} alt="조직-조직도관리" />
+        </ServicePreview>
       </ServiceHero>
       <FeatureSectionWrapper>
         <FeatureSection>
@@ -72,7 +79,7 @@ export default function page() {
               />
             </FeatureContent>
 
-            <FeatureImage src={ServiceSampleImage} alt="준비중" />
+            <FeatureImage src={ServiceImage01} alt="회사기본정보" />
           </Feature>
         </FeatureSection>
 
@@ -92,7 +99,7 @@ export default function page() {
                 ]}
               />
             </FeatureContent>
-            <FeatureImage src={ServiceSampleImage} alt="준비중" />
+            <FeatureImage src={ServiceImage02} alt="직무직군 관리" />
           </Feature>
         </FeatureSection>
 
@@ -114,7 +121,7 @@ export default function page() {
                 ]}
               />
             </FeatureContent>
-            <FeatureImage src={ServiceSampleImage} alt="준비중" />
+            <FeatureImage src={ServiceImage03} alt="인사프로필" />
           </Feature>
         </FeatureSection>
 
@@ -137,7 +144,7 @@ export default function page() {
                 <SupportExcel />
               </FeatureSupport>
             </FeatureContent>
-            <FeatureImage src={ServiceSampleImage} alt="준비중" />
+            <FeatureImage src={ServiceImage04} alt="자산현황" />
           </Feature>
         </FeatureSection>
       </FeatureSectionWrapper>

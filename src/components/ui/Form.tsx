@@ -170,7 +170,12 @@ function FormSectionTitle({
   className,
 }: React.PropsWithChildren<{ className?: string }>) {
   return (
-    <h3 className={cn("mb-7 flex items-center gap-3 font-medium", className)}>
+    <h3
+      className={cn(
+        "mb-7 flex items-center gap-3 font-medium tracking-tight",
+        className,
+      )}
+    >
       <span className="bg-primary h-1.5 w-1.5 rounded-[1px]" />
       {children}
     </h3>

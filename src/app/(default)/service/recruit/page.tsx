@@ -1,7 +1,12 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import FeatureIcon from "@/assets/images/main/icon-feature-recruit.svg";
-import ServiceSampleImage from "@/assets/images/service/feature-sample.svg";
+import ServiceImage01 from "@/assets/images/service/recruit/f-1.svg";
+import ServiceImage02 from "@/assets/images/service/recruit/f-2.svg";
+import ServiceImage03 from "@/assets/images/service/recruit/f-3.svg";
+import ServiceImage04 from "@/assets/images/service/recruit/f-3.svg";
+import HeroImage from "@/assets/images/service/recruit/hero.svg";
 import { ColorProvider } from "@/components/service/ColorProvider";
 import {
   Feature,
@@ -50,7 +55,9 @@ export default function page() {
             <Link href="/inquiry">도입문의</Link>
           </Button>
         </ServiceHeader>
-        <ServicePreview></ServicePreview>
+        <ServicePreview>
+          <Image src={HeroImage} alt="인재채용-채용사이트 지원" />
+        </ServicePreview>
       </ServiceHero>
       <FeatureSectionWrapper>
         <FeatureSection>
@@ -70,7 +77,7 @@ export default function page() {
               />
             </FeatureContent>
 
-            <FeatureImage src={ServiceSampleImage} alt="준비중" />
+            <FeatureImage src={ServiceImage01} alt="채용공고 등록" />
           </Feature>
         </FeatureSection>
 
@@ -89,7 +96,7 @@ export default function page() {
                 ]}
               />
             </FeatureContent>
-            <FeatureImage src={ServiceSampleImage} alt="준비중" />
+            <FeatureImage src={ServiceImage02} alt="기업별 채용사이트 제공" />
           </Feature>
         </FeatureSection>
 
@@ -108,7 +115,7 @@ export default function page() {
                 ]}
               />
             </FeatureContent>
-            <FeatureImage src={ServiceSampleImage} alt="준비중" />
+            <FeatureImage src={ServiceImage03} alt="공고별 지원자 관리" />
           </Feature>
         </FeatureSection>
 
@@ -127,7 +134,7 @@ export default function page() {
                 ]}
               />
             </FeatureContent>
-            <FeatureImage src={ServiceSampleImage} alt="준비중" />
+            <FeatureImage src={ServiceImage04} alt="합격자 관리" />
           </Feature>
         </FeatureSection>
       </FeatureSectionWrapper>
