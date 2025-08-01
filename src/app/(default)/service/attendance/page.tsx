@@ -1,4 +1,5 @@
 import React from "react";
+import { Metadata } from "next";
 import Link from "next/link";
 import FeatureIcon from "@/assets/images/main/icon-feature-attendance.svg";
 import ServiceSampleImage from "@/assets/images/service/feature-sample.svg";
@@ -25,6 +26,13 @@ import {
   ServiceTop,
 } from "@/components/service/Hero";
 import { Button } from "@/components/ui/button";
+import { siteUrl } from "@/lib/config";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  title: "원하는 기능만 골라서 시작해 보세요 | HRUS",
+  description: "월 최소 30,000원으로대표님은 경영에만 집중하세요.",
+};
 
 export default function page() {
   return (

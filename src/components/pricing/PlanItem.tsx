@@ -21,14 +21,14 @@ export default function PlanItem({
   return (
     <div
       className={cn(
-        "relative rounded-2xl border-2 border-transparent bg-white p-10 pt-8 pb-6 shadow-[0px_4px_15px_rgba(0,0,0,0.05)]",
+        "relative rounded-2xl border-2 border-transparent bg-white p-6 shadow-[0px_4px_15px_rgba(0,0,0,0.05)] md:p-8 lg:p-10 lg:pt-8 lg:pb-6",
         type === "core" && "has-[input:checked]:border-primary",
         type === "addon" && "has-[input:checked]:border-[#F5784B]",
       )}
     >
       <label
         className={cn(
-          "absolute top-4 right-4 flex h-[38px] w-[38px] cursor-pointer items-center justify-center rounded-full",
+          "absolute top-4 right-4 flex h-6 w-6 cursor-pointer items-center justify-center rounded-full md:h-[38px] md:w-[38px]",
           type === "core" &&
             value &&
             "bg-gradient-to-r from-[#5766FF] to-[#4526F7]",
@@ -94,7 +94,7 @@ export default function PlanItem({
           </svg>
         )}
       </label>
-      <header className="mb-7 pr-25">
+      <header className="mb-7 lg:pr-25">
         <h2 className="mb-1 text-lg font-semibold">
           {type === "core" ? (
             <div className="mt-1 mb-3">

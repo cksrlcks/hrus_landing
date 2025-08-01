@@ -49,7 +49,7 @@ export default function FloatingCTA() {
           <Image
             src={LogoWhite}
             alt="HRUS"
-            className="shrin-0 brightness-0 invert"
+            className="shrink-0 brightness-0 invert"
           />
           <span className="hidden font-semibold text-white lg:block">
             지금 바로 시작하세요!

@@ -52,7 +52,7 @@ function Slider({
         <SliderPrimitive.Thumb
           data-slot="slider-thumb"
           key={index}
-          className="ring-ring/30 flex h-[38px] w-[38px] cursor-pointer items-center justify-center rounded-[50%] border-2 border-[#ccc] bg-white shadow-[0_2px_4px_rgba(0,0,0,0.1)] transition-all hover:border-[#aaa] hover:shadow-[0_1px_2px_rgba(0,0,0,0.05)] hover:ring-4 focus-visible:outline-hidden disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
+          className="ring-ring/30 flex h-8 w-8 cursor-pointer items-center justify-center rounded-[50%] border-2 border-[#ccc] bg-white shadow-[0_2px_4px_rgba(0,0,0,0.1)] transition-all hover:border-[#aaa] hover:shadow-[0_1px_2px_rgba(0,0,0,0.05)] hover:ring-4 focus-visible:outline-hidden disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:h-[38px] md:w-[38px]"
         >
           <svg
             width="10"

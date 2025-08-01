@@ -3,8 +3,8 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import dynamic from "next/dynamic";
 import z from "zod";
-import Dropzone from "@/components/ui/Dropzone";
 import {
   Form,
   FormContent,
@@ -31,6 +31,15 @@ import { Textarea } from "@/components/ui/textarea";
 import Badge from "../ui/Badge";
 import { Button } from "../ui/button";
 import { Separator } from "../ui/separator";
+
+const Dropzone = dynamic(() => import("@/components/ui/Dropzone"), {
+  ssr: false,
+  loading: () => (
+    <div className="flex h-24 items-center justify-center text-center text-sm text-[#888]">
+      파일업로드 모듈을 불러오는 중입니다.
+    </div>
+  ),
+});
 
 const schema = z.object({
   name: z.string().min(1, { message: "이름을 입력해주세요." }),
@@ -199,15 +208,16 @@ export default function InquiryForm() {
         </FormSection>
         <Separator className="mb-10" />
         <FormSection>
-          <div className="flex items-center gap-3">
+          <div className="flex gap-3">
             <Checkbox
               id="terms"
+              className="shrink-0"
               checked={agree}
               onCheckedChange={() => setAgree((prev) => !prev)}
             />
             <Label
               htmlFor="terms"
-              className="cursor-pointer text-sm font-medium lg:text-base"
+              className="cursor-pointer text-sm leading-snug font-medium lg:text-base"
             >
               <span>
                 개인정보 수집

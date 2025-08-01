@@ -98,7 +98,7 @@ export default function Pricing() {
   return (
     <Inner>
       <FormProvider {...methods}>
-        <div className="mb-40 flex flex-col gap-10 lg:flex-row lg:items-stretch lg:gap-0">
+        <div className="mb-20 flex flex-col gap-10 lg:mb-40 lg:flex-row lg:items-stretch lg:gap-0">
           <div className="flex-1 space-y-15 border-[#eee] lg:border-r-2 lg:pr-10">
             <Section>
               <SectionHeader>

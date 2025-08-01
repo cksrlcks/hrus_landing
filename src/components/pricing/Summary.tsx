@@ -133,9 +133,9 @@ export default function Summary({ onSubmit }: SummaryProps) {
 
         {/* 최종금액 */}
         <div>
-          <div className="mb-4 flex items-baseline justify-between gap-2.5">
+          <div className="mb-4 flex flex-col items-baseline justify-between gap-2.5 md:flex-row">
             <span className="font-semibold">최종구독료</span>
-            <span className="text-[32px] font-bold tracking-tighter">
+            <span className="ml-auto text-2xl font-bold tracking-tighter lg:text-[32px]">
               {formatPrice(totalPrice)} 원
             </span>
           </div>

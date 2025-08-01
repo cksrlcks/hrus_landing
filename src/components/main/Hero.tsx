@@ -21,7 +21,7 @@ import {
 
 export default function Hero() {
   return (
-    <div className="relative flex min-h-[800px] flex-col justify-end overflow-hidden pt-50 pb-30 lg:mb-10">
+    <div className="relative flex min-h-0 flex-col justify-end overflow-hidden pt-40 pb-20 lg:mb-10 lg:min-h-[800px] lg:pt-50 lg:pb-30">
       <div className="relative z-1 flex flex-col items-center gap-16">
         <SectionHeader>
           <SectionTitle size="lg">
@@ -84,7 +84,7 @@ function ScreenFrame({
   return (
     <div
       className={cn(
-        "rounded-[18px] border border-white bg-white/50 p-2 shadow-[0px_-3px_20px_rgba(0,0,0,0.07)] backdrop-blur-[2px] lg:p-4",
+        "rounded-[18px] border border-white bg-white/50 p-1 shadow-[0px_-3px_20px_rgba(0,0,0,0.07)] backdrop-blur-[2px] md:p-2 lg:p-4",
         className,
       )}
     >

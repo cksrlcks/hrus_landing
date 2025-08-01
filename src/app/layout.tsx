@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import InitScrollbarWidth from "@/components/layout/InitScrollbarWitdth";
 import QueryProvider from "@/components/provider/QueryProvider";
+import { siteUrl } from "@/lib/config";
 import "./globals.css";
 
 const pretendard = localFont({
@@ -12,7 +13,7 @@ const pretendard = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://welcome-hrus.uxis.co.kr"),
+  metadataBase: new URL(siteUrl),
   title: "HRUS",
   description:
     "중소기업을 위한 인사경영혁신 솔루션, 함께 성장하고 나아가는 조직을 만듭니다.",
