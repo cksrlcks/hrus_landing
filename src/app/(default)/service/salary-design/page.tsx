@@ -63,7 +63,7 @@ export default function page() {
           </Button>
         </ServiceHeader>
         <ServicePreview>
-          <Image src={HeroImage} alt="임금설계-임금 시뮬레이션" />
+          <Image src={HeroImage} alt="임금설계-임금 시뮬레이션" priority />
         </ServicePreview>
       </ServiceHero>
       <FeatureSectionWrapper>

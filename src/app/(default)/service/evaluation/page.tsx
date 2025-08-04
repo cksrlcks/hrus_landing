@@ -67,6 +67,7 @@ export default function page() {
             src={HeroImage}
             alt="종합평가-종합평가 관리"
             className="lg:-ml-15"
+            priority
           />
         </ServicePreview>
       </ServiceHero>

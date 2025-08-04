@@ -2,6 +2,7 @@ import { PropsWithChildren } from "react";
 import { useFormContext } from "react-hook-form";
 import Image from "next/image";
 import { RefreshCcw } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 import CoreImage from "@/assets/images/icon-core.svg";
 import GroupIcon from "@/assets/images/icon-group.svg";
 import PlusIcon from "@/assets/images/icon-plus.svg";
@@ -87,27 +88,42 @@ export default function Summary({ onSubmit }: SummaryProps) {
         {/* 선택옵션 */}
         <>
           <SummaryTitle>선택 옵션</SummaryTitle>
-          <ul className="space-y-1.5 pt-4">
+          <motion.ul className="space-y-1.5 pt-4">
             <li className="flex items-center justify-between gap-2.5">
               <Image src={CoreImage} alt="hrus core" className="h-3 w-auto" />
               <CoreBadge mini />
             </li>
-            {data?.addons.map((addon) => {
-              if (!formValues.addons[addon.id]) return null;
-              return (
-                <li
-                  key={addon.id}
-                  className="flex items-center justify-between gap-2.5"
-                >
-                  <div className="flex items-center gap-3 font-semibold">
-                    <Image src={PlusIcon} alt="plus" className="h-auto w-4" />
-                    {addon.title}
-                  </div>
-                  <AddonBadge mini />
-                </li>
-              );
-            })}
-          </ul>
+            <AnimatePresence>
+              {data?.addons.map((addon) => {
+                if (!formValues.addons[addon.id]) return null;
+                return (
+                  <motion.li
+                    key={addon.id}
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{
+                      opacity: 0,
+                      x: 10,
+                      transition: { duration: 0.1 },
+                    }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 500,
+                      damping: 30,
+                    }}
+                    layout
+                    className="flex items-center justify-between gap-2.5"
+                  >
+                    <div className="flex items-center gap-3 font-semibold">
+                      <Image src={PlusIcon} alt="plus" className="h-auto w-4" />
+                      {addon.title}
+                    </div>
+                    <AddonBadge mini />
+                  </motion.li>
+                );
+              })}
+            </AnimatePresence>
+          </motion.ul>
         </>
 
         <Separator className="my-4" />

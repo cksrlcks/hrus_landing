@@ -69,6 +69,7 @@ export default function page() {
             src={HeroImage}
             alt="인재채용-채용사이트 지원"
             className="lg:-ml-15"
+            priority
           />
         </ServicePreview>
       </ServiceHero>

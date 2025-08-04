@@ -10,6 +10,7 @@ import FeatureBackground from "@/assets/images/service/feature-bg.svg";
 import { cn } from "@/lib/utils";
 import Inner from "../layout/Inner";
 import CheckIcon from "../ui/CheckIcon";
+import FadeInStagger from "../ui/FadeInUp";
 import { useColorContext } from "./ColorProvider";
 
 export function Feature({
@@ -17,14 +18,16 @@ export function Feature({
   reverse,
 }: PropsWithChildren<{ reverse?: boolean }>) {
   return (
-    <div
-      className={cn(
-        "flex flex-col gap-10 lg:flex-row lg:gap-24",
-        reverse && "lg:flex-row-reverse",
-      )}
-    >
-      {children}
-    </div>
+    <FadeInStagger delayStep={0.06}>
+      <div
+        className={cn(
+          "flex flex-col gap-10 lg:flex-row lg:gap-24",
+          reverse && "lg:flex-row-reverse",
+        )}
+      >
+        {children}
+      </div>
+    </FadeInStagger>
   );
 }
 

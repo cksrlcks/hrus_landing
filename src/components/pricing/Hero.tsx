@@ -11,6 +11,7 @@ import {
   SectionHeader,
   SectionTitle,
 } from "../main/Section";
+import FadeInStagger from "../ui/FadeInUp";
 import GradientText from "../ui/GradientText";
 
 export default function Hero() {
@@ -20,18 +21,20 @@ export default function Hero() {
 
       <Inner className="flex flex-col items-center pt-30 pb-20 lg:pt-60 lg:pb-30">
         <SectionHeader>
-          <SectionTitle size="lg">
-            원하는 기능만 골라서
-            <br />
-            <GradientText>시작해 보세요</GradientText>
-          </SectionTitle>
-          <SectionDescription>
-            월 최소 <b className="font-semibold text-black">30,000원</b>으로
-            대표님은 경영에만 집중하세요. <br />
-            <span className="text-[15px] opacity-70">
-              (기본 구성원 5명 기준)
-            </span>
-          </SectionDescription>
+          <FadeInStagger delayStep={0.1}>
+            <SectionTitle size="lg">
+              원하는 기능만 골라서
+              <br />
+              <GradientText>시작해 보세요</GradientText>
+            </SectionTitle>
+            <SectionDescription>
+              월 최소 <b className="font-semibold text-black">30,000원</b>으로
+              대표님은 경영에만 집중하세요. <br />
+              <span className="text-[15px] opacity-70">
+                (기본 구성원 5명 기준)
+              </span>
+            </SectionDescription>
+          </FadeInStagger>
         </SectionHeader>
 
         <div className="hidden md:block">

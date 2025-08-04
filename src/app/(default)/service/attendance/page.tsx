@@ -69,7 +69,7 @@ export default function page() {
           </Button>
         </ServiceHeader>
         <ServicePreview>
-          <Image src={HeroImage} alt="근태-근무현황" />
+          <Image src={HeroImage} alt="근태-근무현황" priority />
         </ServicePreview>
       </ServiceHero>
       <FeatureSectionWrapper>

@@ -47,7 +47,7 @@ export default function Hero() {
 
         <div className="relative z-2 inline-block px-10">
           <ScreenFrame>
-            <Image src={DashboardImage} alt="Dashboard" />
+            <Image src={DashboardImage} alt="Dashboard" priority />
             <FeatureIcon className="absolute top-0 right-0 hidden translate-x-1/2 -translate-y-1/2 lg:flex">
               <Image src={EvalImage} alt="Salary" />
             </FeatureIcon>
@@ -56,13 +56,13 @@ export default function Hero() {
             </FeatureIcon>
           </ScreenFrame>
           <ScreenFrame className="absolute right-4 bottom-0 h-auto w-[30vw] translate-y-1/10 lg:right-0 lg:w-auto lg:translate-x-1/4">
-            <Image src={GoalImage} alt="Goals" />
+            <Image src={GoalImage} alt="Goals" priority />
             <FeatureIcon className="absolute top-0 right-0 hidden translate-x-1/2 -translate-y-1/2 lg:flex">
               <Image src={SalaryImage} alt="Salary" />
             </FeatureIcon>
           </ScreenFrame>
           <ScreenFrame className="absolute bottom-0 left-4 h-auto w-[40vw] translate-y-1/10 lg:left-0 lg:w-auto lg:-translate-x-1/10">
-            <Image src={PayImage} alt="Payments" />
+            <Image src={PayImage} alt="Payments" priority />
             <FeatureIcon className="absolute top-1/2 left-0 hidden -translate-x-1/2 -translate-y-1/2 lg:flex">
               <Image src={GoalsImage} alt="Salary" />
             </FeatureIcon>

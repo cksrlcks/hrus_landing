@@ -16,7 +16,7 @@ export function ServiceHero({ children }: PropsWithChildren) {
         className="relative overflow-hidden lg:h-[800px]"
         style={{ backgroundColor: bg }}
       >
-        <Inner className="pt-40 lg:pt-60">{children}</Inner>
+        <Inner className="pt-40 pb-30 lg:pt-60 lg:pb-0">{children}</Inner>
       </div>
     </>
   );
@@ -24,7 +24,7 @@ export function ServiceHero({ children }: PropsWithChildren) {
 
 export function ServiceHeader({ children }: PropsWithChildren) {
   return (
-    <div className="mb-10 flex h-full flex-1 flex-col items-start justify-center lg:mb-0 lg:w-1/2">
+    <div className="flex h-full flex-1 flex-col items-start justify-center lg:w-1/2">
       {children}
     </div>
   );
@@ -74,7 +74,7 @@ export function ServiceFeatures({ data }: { data: string[] }) {
 
 export function ServicePreview({ children }: PropsWithChildren) {
   return (
-    <div className="flex w-full items-end justify-center lg:absolute lg:bottom-0 lg:left-[calc(50%+80px)] lg:h-full lg:w-1/2 lg:justify-start">
+    <div className="hidden w-full items-end justify-center lg:absolute lg:bottom-0 lg:left-[calc(50%+80px)] lg:flex lg:h-full lg:w-1/2 lg:justify-start">
       {children}
     </div>
   );

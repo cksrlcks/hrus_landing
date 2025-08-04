@@ -30,6 +30,7 @@ import {
   ServiceTitle,
   ServiceTop,
 } from "@/components/service/Hero";
+import FadeInStagger from "@/components/ui/FadeInUp";
 import { Button } from "@/components/ui/button";
 import { siteUrl } from "@/lib/config";
 
@@ -67,7 +68,7 @@ export default function page() {
           </Button>
         </ServiceHeader>
         <ServicePreview>
-          <Image src={HeroImage} alt="대시보드" />
+          <Image src={HeroImage} alt="대시보드" priority />
         </ServicePreview>
       </ServiceHero>
       <FeatureSectionWrapper>

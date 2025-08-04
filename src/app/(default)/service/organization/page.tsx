@@ -66,7 +66,12 @@ export default function page() {
           </Button>
         </ServiceHeader>
         <ServicePreview>
-          <Image src={HeroImage} alt="조직-조직도관리" className="lg:-ml-15" />
+          <Image
+            src={HeroImage}
+            alt="조직-조직도관리"
+            className="lg:-ml-15"
+            priority
+          />
         </ServicePreview>
       </ServiceHero>
       <FeatureSectionWrapper>

@@ -65,7 +65,7 @@ export default function page() {
           </Button>
         </ServiceHeader>
         <ServicePreview>
-          <Image src={HeroImage} alt="목표-목표 관리" />
+          <Image src={HeroImage} alt="목표-목표 관리" priority />
         </ServicePreview>
       </ServiceHero>
       <FeatureSectionWrapper>

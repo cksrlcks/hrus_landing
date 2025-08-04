@@ -56,8 +56,7 @@ export default function page() {
             data={[
               "실시간 전자결재 현황 알림",
               "쉽고 빠른 결재자 승인/반려",
-              "업무별 사전 결재라인 지정",
-              "메뉴별 전자결재 On/Off",
+              "업무별 사전 결재라인 지정 및 메뉴별 전자결재 On/Off",
               "개인별/회사 문서함 구분 및 업무별 문서 양식 관리",
               "외부 문서 파일 등록 지원",
             ]}
@@ -67,7 +66,12 @@ export default function page() {
           </Button>
         </ServiceHeader>
         <ServicePreview>
-          <Image src={HeroImage} alt="전자결재" className="lg:-ml-15" />
+          <Image
+            src={HeroImage}
+            alt="전자결재"
+            className="lg:-ml-15"
+            priority
+          />
         </ServicePreview>
       </ServiceHero>
       <FeatureSectionWrapper>
