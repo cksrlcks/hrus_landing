@@ -1,13 +1,12 @@
 import React from "react";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import FeatureIcon from "@/assets/images/main/icon-feature-dashboard.svg";
 import ServiceImage01 from "@/assets/images/service/dashboard/f-1.svg";
 import ServiceImage02 from "@/assets/images/service/dashboard/f-2.svg";
 import ServiceImage03 from "@/assets/images/service/dashboard/f-3.svg";
-import HeroImage01 from "@/assets/images/service/dashboard/hero-1.svg";
-import HeroImage02 from "@/assets/images/service/dashboard/hero-2.svg";
-import HeroImage03 from "@/assets/images/service/dashboard/hero-3.svg";
+import HeroImage from "@/assets/images/service/dashboard/hero.svg";
 import { ColorProvider } from "@/components/service/ColorProvider";
 import {
   Feature,
@@ -28,11 +27,18 @@ import {
   ServiceIcon,
   ServiceName,
   ServicePreview,
-  ServicePreviewFrame,
   ServiceTitle,
   ServiceTop,
 } from "@/components/service/Hero";
 import { Button } from "@/components/ui/button";
+import { siteUrl } from "@/lib/config";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  title: "흩어져있는 구성원 데이터, 대시보드에서 한 번에 확인! | HRUS",
+  description:
+    "중소기업을 위한 인사경영혁신 솔루션, 함께 성장하고 나아가는 조직을 만듭니다.",
+};
 
 export default function page() {
   return (
@@ -61,17 +67,7 @@ export default function page() {
           </Button>
         </ServiceHeader>
         <ServicePreview>
-          <div className="-mb-[6%] space-y-2.5 lg:mb-0 lg:translate-y-[14%]">
-            <ServicePreviewFrame>
-              <Image src={HeroImage01} alt="총 인력 현황" />
-            </ServicePreviewFrame>
-            <ServicePreviewFrame>
-              <Image src={HeroImage02} alt="구성원" />
-            </ServicePreviewFrame>
-            <ServicePreviewFrame className="hidden lg:block">
-              <Image src={HeroImage03} alt="전직원 고용형태 구성 비율" />
-            </ServicePreviewFrame>
-          </div>
+          <Image src={HeroImage} alt="대시보드" />
         </ServicePreview>
       </ServiceHero>
       <FeatureSectionWrapper>

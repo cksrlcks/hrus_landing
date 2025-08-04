@@ -1,4 +1,5 @@
 import React from "react";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import FeatureIcon from "@/assets/images/main/icon-feature-goal.svg";
@@ -29,6 +30,14 @@ import {
   ServiceTop,
 } from "@/components/service/Hero";
 import { Button } from "@/components/ui/button";
+import { siteUrl } from "@/lib/config";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  title: "조직의 성과를 연결하고, 한 흐름으로 관리하다 | HRUS",
+  description:
+    "중소기업을 위한 인사경영혁신 솔루션, 함께 성장하고 나아가는 조직을 만듭니다.",
+};
 
 export default function page() {
   return (

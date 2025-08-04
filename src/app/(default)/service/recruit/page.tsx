@@ -1,4 +1,5 @@
 import React from "react";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import FeatureIcon from "@/assets/images/main/icon-feature-recruit.svg";
@@ -28,6 +29,14 @@ import {
   ServiceTop,
 } from "@/components/service/Hero";
 import { Button } from "@/components/ui/button";
+import { siteUrl } from "@/lib/config";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  title: "우리가 원하는 인재를, 우리가 원하는 방식으로 | HRUS",
+  description:
+    "중소기업을 위한 인사경영혁신 솔루션, 함께 성장하고 나아가는 조직을 만듭니다.",
+};
 
 export default function page() {
   return (
@@ -56,7 +65,11 @@ export default function page() {
           </Button>
         </ServiceHeader>
         <ServicePreview>
-          <Image src={HeroImage} alt="인재채용-채용사이트 지원" />
+          <Image
+            src={HeroImage}
+            alt="인재채용-채용사이트 지원"
+            className="lg:-ml-15"
+          />
         </ServicePreview>
       </ServiceHero>
       <FeatureSectionWrapper>

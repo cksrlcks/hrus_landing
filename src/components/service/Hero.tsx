@@ -74,7 +74,7 @@ export function ServiceFeatures({ data }: { data: string[] }) {
 
 export function ServicePreview({ children }: PropsWithChildren) {
   return (
-    <div className="flex w-full items-end justify-center overflow-hidden lg:absolute lg:bottom-0 lg:left-[calc(50%+80px)] lg:h-full lg:w-1/2 lg:justify-start">
+    <div className="flex w-full items-end justify-center lg:absolute lg:bottom-0 lg:left-[calc(50%+80px)] lg:h-full lg:w-1/2 lg:justify-start">
       {children}
     </div>
   );

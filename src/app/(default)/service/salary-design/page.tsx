@@ -1,4 +1,5 @@
 import React from "react";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import FeatureIcon from "@/assets/images/main/icon-feature-salary.svg";
@@ -27,6 +28,14 @@ import {
   ServiceTop,
 } from "@/components/service/Hero";
 import { Button } from "@/components/ui/button";
+import { siteUrl } from "@/lib/config";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  title: "구성원 성과에 맞춘 공정하고 합리적인 임금설계의 시작 | HRUS",
+  description:
+    "중소기업을 위한 인사경영혁신 솔루션, 함께 성장하고 나아가는 조직을 만듭니다.",
+};
 
 export default function page() {
   return (

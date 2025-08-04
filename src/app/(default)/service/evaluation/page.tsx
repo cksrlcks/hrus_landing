@@ -1,4 +1,5 @@
 import React from "react";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import FeatureIcon from "@/assets/images/main/icon-feature-eval.svg";
@@ -26,6 +27,14 @@ import {
   ServiceTop,
 } from "@/components/service/Hero";
 import { Button } from "@/components/ui/button";
+import { siteUrl } from "@/lib/config";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  title: "성과를 정량화하고, 공정하게 평가하는 종합평가 | HRUS",
+  description:
+    "중소기업을 위한 인사경영혁신 솔루션, 함께 성장하고 나아가는 조직을 만듭니다.",
+};
 
 export default function page() {
   return (
@@ -54,7 +63,11 @@ export default function page() {
           </Button>
         </ServiceHeader>
         <ServicePreview>
-          <Image src={HeroImage} alt="종합평가-종합평가 관리" />
+          <Image
+            src={HeroImage}
+            alt="종합평가-종합평가 관리"
+            className="lg:-ml-15"
+          />
         </ServicePreview>
       </ServiceHero>
       <FeatureSectionWrapper>
