@@ -35,7 +35,7 @@ export default function Info() {
               index === 0 && "row-span-2",
             )}
           >
-            <div className="opacity-20">{menu.label}</div>
+            <div className="opacity-40">{menu.label}</div>
             <ul className="space-y-1.5 opacity-80">
               {menu.children?.map((child) => (
                 <li key={child.id}>

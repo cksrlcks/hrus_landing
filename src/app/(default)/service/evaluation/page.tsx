@@ -1,7 +1,10 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import FeatureIcon from "@/assets/images/main/icon-feature-eval.svg";
-import ServiceSampleImage from "@/assets/images/service/feature-sample.svg";
+import ServiceImage01 from "@/assets/images/service/evaluation/f-1.svg";
+import ServiceImage02 from "@/assets/images/service/evaluation/f-2.svg";
+import HeroImage from "@/assets/images/service/evaluation/hero.svg";
 import { ColorProvider } from "@/components/service/ColorProvider";
 import {
   Feature,
@@ -50,7 +53,9 @@ export default function page() {
             <Link href="/inquiry">도입문의</Link>
           </Button>
         </ServiceHeader>
-        <ServicePreview></ServicePreview>
+        <ServicePreview>
+          <Image src={HeroImage} alt="종합평가-종합평가 관리" />
+        </ServicePreview>
       </ServiceHero>
       <FeatureSectionWrapper>
         <FeatureSection>
@@ -70,7 +75,7 @@ export default function page() {
               />
             </FeatureContent>
 
-            <FeatureImage src={ServiceSampleImage} alt="준비중" />
+            <FeatureImage src={ServiceImage01} alt="종합평가" />
           </Feature>
         </FeatureSection>
 
@@ -89,7 +94,7 @@ export default function page() {
                 ]}
               />
             </FeatureContent>
-            <FeatureImage src={ServiceSampleImage} alt="준비중" />
+            <FeatureImage src={ServiceImage02} alt="종합평가" />
           </Feature>
         </FeatureSection>
       </FeatureSectionWrapper>

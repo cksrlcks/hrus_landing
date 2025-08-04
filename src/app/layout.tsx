@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import GoTopButton from "@/components/layout/GoTopButton";
 import InitScrollbarWidth from "@/components/layout/InitScrollbarWitdth";
+import SmoothScroller from "@/components/provider/LenisProvider";
 import QueryProvider from "@/components/provider/QueryProvider";
 import { siteUrl } from "@/lib/config";
 import "./globals.css";

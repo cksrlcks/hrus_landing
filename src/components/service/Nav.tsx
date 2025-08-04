@@ -1,10 +1,10 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { AnimatePresence, motion, useInView } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import FeatureIconAttendance from "@/assets/images/main/icon-feature-attendance.svg";
 import FeatureIconDashboard from "@/assets/images/main/icon-feature-dashboard.svg";
 import FeatureIconDocs from "@/assets/images/main/icon-feature-docs.svg";
@@ -75,12 +75,35 @@ const MENUS: {
 
 export default function SubNav() {
   const navRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(navRef);
   const pathname = usePathname();
+  const [showFixedNav, setShowFixedNav] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const { boundingClientRect, isIntersecting } = entry;
+        const isAbove = boundingClientRect.top < 0;
+
+        setShowFixedNav(!isIntersecting && isAbove);
+      },
+      {
+        root: null,
+        threshold: 0,
+      },
+    );
+
+    const el = navRef.current;
+    if (el) observer.observe(el);
+    return () => {
+      if (el) observer.unobserve(el);
+      observer.disconnect();
+    };
+  }, [pathname]);
 
   const color = MENUS.find((menu) => menu.path === pathname)?.color || "green";
   const { border } = getColorObject(color);
   const menuLength = MENUS.length;
+
   return (
     <>
       <div
@@ -135,7 +158,7 @@ export default function SubNav() {
         </Inner>
       </div>
       <AnimatePresence>
-        {!isInView && (
+        {showFixedNav && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

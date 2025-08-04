@@ -1,7 +1,11 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import FeatureIcon from "@/assets/images/main/icon-feature-salary.svg";
-import ServiceSampleImage from "@/assets/images/service/feature-sample.svg";
+import ServiceImage01 from "@/assets/images/service/salary/f-1.svg";
+import ServiceImage02 from "@/assets/images/service/salary/f-2.svg";
+import ServiceImage03 from "@/assets/images/service/salary/f-3.svg";
+import HeroImage from "@/assets/images/service/salary/hero.svg";
 import { ColorProvider } from "@/components/service/ColorProvider";
 import {
   Feature,
@@ -11,8 +15,6 @@ import {
   FeatureList,
   FeatureTitle,
   FeatureSectionWrapper,
-  FeatureSupport,
-  SupportExcel,
 } from "@/components/service/Feature";
 import {
   ServiceFeatures,
@@ -51,7 +53,9 @@ export default function page() {
             <Link href="/inquiry">도입문의</Link>
           </Button>
         </ServiceHeader>
-        <ServicePreview></ServicePreview>
+        <ServicePreview>
+          <Image src={HeroImage} alt="임금설계-임금 시뮬레이션" />
+        </ServicePreview>
       </ServiceHero>
       <FeatureSectionWrapper>
         <FeatureSection>
@@ -69,7 +73,7 @@ export default function page() {
               />
             </FeatureContent>
 
-            <FeatureImage src={ServiceSampleImage} alt="준비중" />
+            <FeatureImage src={ServiceImage01} alt="임금설계" />
           </Feature>
         </FeatureSection>
 
@@ -89,7 +93,7 @@ export default function page() {
                 ]}
               />
             </FeatureContent>
-            <FeatureImage src={ServiceSampleImage} alt="준비중" />
+            <FeatureImage src={ServiceImage02} alt="임금설계" />
           </Feature>
         </FeatureSection>
 
@@ -108,29 +112,7 @@ export default function page() {
                 ]}
               />
             </FeatureContent>
-            <FeatureImage src={ServiceSampleImage} alt="준비중" />
-          </Feature>
-        </FeatureSection>
-
-        <FeatureSection>
-          <Feature reverse>
-            <FeatureContent>
-              <FeatureTitle>
-                합격자 정보를 그대로 연동해 조직 배치부터
-                <br />
-                근로·연봉 계약까지 따로 입력하지 않아도 돼요
-              </FeatureTitle>
-              <FeatureList
-                features={[
-                  "합격자 기준 근로/연봉 계약 정보 및 계약서 등록",
-                  "조직 내 구성원 추가 시 합격자 정보 연동하여 별도의 추가 입력 없이 기본 정보 등록",
-                ]}
-              />
-              <FeatureSupport>
-                <SupportExcel />
-              </FeatureSupport>
-            </FeatureContent>
-            <FeatureImage src={ServiceSampleImage} alt="준비중" />
+            <FeatureImage src={ServiceImage03} alt="임금설계" />
           </Feature>
         </FeatureSection>
       </FeatureSectionWrapper>

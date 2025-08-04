@@ -1,8 +1,14 @@
 import React from "react";
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import FeatureIcon from "@/assets/images/main/icon-feature-attendance.svg";
-import ServiceSampleImage from "@/assets/images/service/feature-sample.svg";
+import ServiceImage01 from "@/assets/images/service/attendance/f-1.svg";
+import ServiceImage02 from "@/assets/images/service/attendance/f-2.svg";
+import ServiceImage03 from "@/assets/images/service/attendance/f-3.svg";
+import ServiceImage04 from "@/assets/images/service/attendance/f-4.svg";
+import ServiceImage05 from "@/assets/images/service/attendance/f-5.svg";
+import HeroImage from "@/assets/images/service/attendance/hero.svg";
 import { ColorProvider } from "@/components/service/ColorProvider";
 import {
   Feature,
@@ -30,8 +36,9 @@ import { siteUrl } from "@/lib/config";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "원하는 기능만 골라서 시작해 보세요 | HRUS",
-  description: "월 최소 30,000원으로대표님은 경영에만 집중하세요.",
+  title: "일하는 방식이 달라졌다면, 관리도 달라져야 하니까 | HRUS",
+  description:
+    "중소기업을 위한 인사경영혁신 솔루션, 함께 성장하고 나아가는 조직을 만듭니다.",
 };
 
 export default function page() {
@@ -61,7 +68,9 @@ export default function page() {
             <Link href="/inquiry">도입문의</Link>
           </Button>
         </ServiceHeader>
-        <ServicePreview></ServicePreview>
+        <ServicePreview>
+          <Image src={HeroImage} alt="근태-근무현황" />
+        </ServicePreview>
       </ServiceHero>
       <FeatureSectionWrapper>
         <FeatureSection>
@@ -80,7 +89,7 @@ export default function page() {
               />
             </FeatureContent>
 
-            <FeatureImage src={ServiceSampleImage} alt="준비중" />
+            <FeatureImage src={ServiceImage01} alt="근태" />
           </Feature>
         </FeatureSection>
 
@@ -101,7 +110,7 @@ export default function page() {
                 <SupportExcel />
               </FeatureSupport>
             </FeatureContent>
-            <FeatureImage src={ServiceSampleImage} alt="준비중" />
+            <FeatureImage src={ServiceImage02} alt="근태" />
           </Feature>
         </FeatureSection>
 
@@ -125,7 +134,7 @@ export default function page() {
                 <SupportExcel />
               </FeatureSupport>
             </FeatureContent>
-            <FeatureImage src={ServiceSampleImage} alt="준비중" />
+            <FeatureImage src={ServiceImage03} alt="근태" />
           </Feature>
         </FeatureSection>
 
@@ -148,7 +157,7 @@ export default function page() {
                 <SupportExcel />
               </FeatureSupport>
             </FeatureContent>
-            <FeatureImage src={ServiceSampleImage} alt="준비중" />
+            <FeatureImage src={ServiceImage04} alt="근태" />
           </Feature>
         </FeatureSection>
 
@@ -169,7 +178,7 @@ export default function page() {
                 ]}
               />
             </FeatureContent>
-            <FeatureImage src={ServiceSampleImage} alt="준비중" />
+            <FeatureImage src={ServiceImage05} alt="근태" />
           </Feature>
         </FeatureSection>
       </FeatureSectionWrapper>

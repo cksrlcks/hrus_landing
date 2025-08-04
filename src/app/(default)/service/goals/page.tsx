@@ -1,7 +1,10 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import FeatureIcon from "@/assets/images/main/icon-feature-goal.svg";
-import ServiceSampleImage from "@/assets/images/service/feature-sample.svg";
+import ServiceImage01 from "@/assets/images/service/goal/f-1.svg";
+import ServiceImage02 from "@/assets/images/service/goal/f-2.svg";
+import HeroImage from "@/assets/images/service/goal/hero.svg";
 import { ColorProvider } from "@/components/service/ColorProvider";
 import {
   Feature,
@@ -52,7 +55,9 @@ export default function page() {
             <Link href="/inquiry">도입문의</Link>
           </Button>
         </ServiceHeader>
-        <ServicePreview></ServicePreview>
+        <ServicePreview>
+          <Image src={HeroImage} alt="목표-목표 관리" />
+        </ServicePreview>
       </ServiceHero>
       <FeatureSectionWrapper>
         <FeatureSection>
@@ -73,7 +78,7 @@ export default function page() {
               />
             </FeatureContent>
 
-            <FeatureImage src={ServiceSampleImage} alt="준비중" />
+            <FeatureImage src={ServiceImage01} alt="목표" />
           </Feature>
         </FeatureSection>
 
@@ -95,7 +100,7 @@ export default function page() {
                 <SupportDownload />
               </FeatureSupport>
             </FeatureContent>
-            <FeatureImage src={ServiceSampleImage} alt="준비중" />
+            <FeatureImage src={ServiceImage02} alt="목표" />
           </Feature>
         </FeatureSection>
       </FeatureSectionWrapper>

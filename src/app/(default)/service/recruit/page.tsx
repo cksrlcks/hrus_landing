@@ -5,7 +5,7 @@ import FeatureIcon from "@/assets/images/main/icon-feature-recruit.svg";
 import ServiceImage01 from "@/assets/images/service/recruit/f-1.svg";
 import ServiceImage02 from "@/assets/images/service/recruit/f-2.svg";
 import ServiceImage03 from "@/assets/images/service/recruit/f-3.svg";
-import ServiceImage04 from "@/assets/images/service/recruit/f-3.svg";
+import ServiceImage04 from "@/assets/images/service/recruit/f-4.svg";
 import HeroImage from "@/assets/images/service/recruit/hero.svg";
 import { ColorProvider } from "@/components/service/ColorProvider";
 import {
